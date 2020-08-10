@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FinanceType">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="FinanceType_MonthyFinance">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FinanceTypeUUID" Type="uniqueidentifier" />
+    <Property Name="MonthlyFinanceUUID" Type="uniqueidentifier" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="MonthlyFinance">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonUUID" Type="uniqueidentifier" />
+    <Property Name="DateMade" Type="datetime" />
+    <Property Name="Month" Type="varchar" MaxLength="30" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="MonthIncome" Type="money" />
+    <Property Name="MonthOutcome" Type="money" />
+    <Property Name="NetIncome" Type="money" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonName" Type="varchar" MaxLength="30" />
+    <Property Name="PersonAge" Type="int" />
+    <Property Name="PersonMonthlyIncome" Type="money" />
+    <Property Name="PersonImage" Type="image" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityContainer Name="FMModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinanceType" EntityType="Self.FinanceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinanceType_MonthyFinance" EntityType="Self.FinanceType_MonthyFinance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonthlyFinance" EntityType="Self.MonthlyFinance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

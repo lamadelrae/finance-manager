@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FinanceType">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="Guid" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FinanceType_MonthyFinance">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="Guid" Nullable="false" />
+    <Property Name="FinanceTypeUUID" Type="Guid" />
+    <Property Name="MonthlyFinanceUUID" Type="Guid" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MonthlyFinance">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="Guid" Nullable="false" />
+    <Property Name="PersonUUID" Type="Guid" />
+    <Property Name="DateMade" Type="DateTime" Precision="3" />
+    <Property Name="Month" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="MonthIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MonthOutcome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NetIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="UUID" />
+    </Key>
+    <Property Name="UUID" Type="Guid" Nullable="false" />
+    <Property Name="PersonName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PersonAge" Type="Int32" />
+    <Property Name="PersonMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PersonImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="FinanceTypes" EntityType="Self.FinanceType" />
+    <EntitySet Name="FinanceType_MonthyFinance" EntityType="Self.FinanceType_MonthyFinance" />
+    <EntitySet Name="MonthlyFinances" EntityType="Self.MonthlyFinance" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+  </EntityContainer>
+</Schema>
