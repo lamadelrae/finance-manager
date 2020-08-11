@@ -14,6 +14,7 @@ namespace FinanceManager.DAL
             using (var context = new FMEntities())
             {
                 context.People.Add(Person);
+
                 context.SaveChanges();
             }
         }
