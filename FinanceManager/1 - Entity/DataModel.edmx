@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FinanceType">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+          <Property Name="Name" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="FinanceType_MonthyFinance">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FinanceTypeUUID" Type="uniqueidentifier" />
+          <Property Name="MonthlyFinanceUUID" Type="uniqueidentifier" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="MonthlyFinance">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonUUID" Type="uniqueidentifier" />
+          <Property Name="DateMade" Type="datetime" />
+          <Property Name="Month" Type="varchar" MaxLength="30" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="MonthIncome" Type="money" />
+          <Property Name="MonthOutcome" Type="money" />
+          <Property Name="NetIncome" Type="money" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonName" Type="varchar" MaxLength="30" />
+          <Property Name="PersonAge" Type="int" />
+          <Property Name="PersonMonthlyIncome" Type="money" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="FMModelStoreContainer">
+          <EntitySet Name="FinanceType" EntityType="Self.FinanceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinanceType_MonthyFinance" EntityType="Self.FinanceType_MonthyFinance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MonthlyFinance" EntityType="Self.MonthlyFinance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FinanceType">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="Guid" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FinanceType_MonthyFinance">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="Guid" Nullable="false" />
+          <Property Name="FinanceTypeUUID" Type="Guid" />
+          <Property Name="MonthlyFinanceUUID" Type="Guid" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MonthlyFinance">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="Guid" Nullable="false" />
+          <Property Name="PersonUUID" Type="Guid" />
+          <Property Name="DateMade" Type="DateTime" Precision="3" />
+          <Property Name="Month" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="MonthIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MonthOutcome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NetIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="UUID" />
+          </Key>
+          <Property Name="UUID" Type="Guid" Nullable="false" />
+          <Property Name="PersonName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PersonAge" Type="Int32" />
+          <Property Name="PersonMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PersonImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FinanceTypes" EntityType="Self.FinanceType" />
+          <EntitySet Name="FinanceType_MonthyFinance" EntityType="Self.FinanceType_MonthyFinance" />
+          <EntitySet Name="MonthlyFinances" EntityType="Self.MonthlyFinance" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FMModelStoreContainer" CdmEntityContainer="FMEntities">
+          <EntitySetMapping Name="FinanceTypes">
+            <EntityTypeMapping TypeName="FMModel.FinanceType">
+              <MappingFragment StoreEntitySet="FinanceType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceType_MonthyFinance">
+            <EntityTypeMapping TypeName="FMModel.FinanceType_MonthyFinance">
+              <MappingFragment StoreEntitySet="FinanceType_MonthyFinance">
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
+                <ScalarProperty Name="FinanceTypeUUID" ColumnName="FinanceTypeUUID" />
+                <ScalarProperty Name="MonthlyFinanceUUID" ColumnName="MonthlyFinanceUUID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonthlyFinances">
+            <EntityTypeMapping TypeName="FMModel.MonthlyFinance">
+              <MappingFragment StoreEntitySet="MonthlyFinance">
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
+                <ScalarProperty Name="PersonUUID" ColumnName="PersonUUID" />
+                <ScalarProperty Name="DateMade" ColumnName="DateMade" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="MonthIncome" ColumnName="MonthIncome" />
+                <ScalarProperty Name="MonthOutcome" ColumnName="MonthOutcome" />
+                <ScalarProperty Name="NetIncome" ColumnName="NetIncome" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="FMModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
+                <ScalarProperty Name="PersonMonthlyIncome" ColumnName="PersonMonthlyIncome" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
