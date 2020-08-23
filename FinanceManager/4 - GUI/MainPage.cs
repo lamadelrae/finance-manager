@@ -14,8 +14,8 @@ namespace FinanceManager
 {
     public partial class Form1 : Form
     {
-        private PersonRegister PersonRegister;
-        private FinanceTypesRegister FinanceTypesRegister;
+        private PersonRegister PersonRegister = null;
+        private FinanceTypesRegister FinanceTypesRegister = null;
         public Form1()
         {
             InitializeComponent();
@@ -23,11 +23,11 @@ namespace FinanceManager
 
         public void DisposeOfAny()
         {
-            if (this.MainPanel.Controls.Count > 0)
-            {
-                this.MainPanel.Controls.Remove(PersonRegister);
-                this.MainPanel.Controls.Remove(FinanceTypesRegister);
-            }
+            if (PersonRegister != null)
+                PersonRegister.Dispose();
+
+            if (FinanceTypesRegister != null)
+                FinanceTypesRegister.Dispose();
         }
 
         private void btnPerson_Click(object sender, EventArgs e)
