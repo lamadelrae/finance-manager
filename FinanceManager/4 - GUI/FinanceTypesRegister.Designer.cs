@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TypesCombo = new System.Windows.Forms.ComboBox();
+            this.PriceTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameTxtBox = new System.Windows.Forms.TextBox();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,25 +49,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Finance Type Registration";
             // 
-            // comboBox2
+            // TypesCombo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(42, 94);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(144, 21);
-            this.comboBox2.TabIndex = 2;
+            this.TypesCombo.FormattingEnabled = true;
+            this.TypesCombo.Location = new System.Drawing.Point(40, 54);
+            this.TypesCombo.Name = "TypesCombo";
+            this.TypesCombo.Size = new System.Drawing.Size(144, 21);
+            this.TypesCombo.TabIndex = 2;
             // 
-            // textBox1
+            // PriceTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(42, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
-            this.textBox1.TabIndex = 3;
+            this.PriceTxtBox.Location = new System.Drawing.Point(40, 112);
+            this.PriceTxtBox.Name = "PriceTxtBox";
+            this.PriceTxtBox.Size = new System.Drawing.Size(144, 20);
+            this.PriceTxtBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 94);
+            this.label2.Location = new System.Drawing.Point(9, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 4;
@@ -75,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 151);
+            this.label3.Location = new System.Drawing.Point(5, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
@@ -84,29 +85,40 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 121);
+            this.label4.Location = new System.Drawing.Point(5, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Name";
             // 
-            // textBox2
+            // NameTxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(42, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 7;
+            this.NameTxtBox.Location = new System.Drawing.Point(40, 83);
+            this.NameTxtBox.Name = "NameTxtBox";
+            this.NameTxtBox.Size = new System.Drawing.Size(144, 20);
+            this.NameTxtBox.TabIndex = 7;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(40, 135);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(75, 22);
+            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // FinanceTypesRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.NameTxtBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.PriceTxtBox);
+            this.Controls.Add(this.TypesCombo);
             this.Controls.Add(this.label1);
             this.Name = "FinanceTypesRegister";
             this.Size = new System.Drawing.Size(480, 388);
@@ -118,11 +130,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox TypesCombo;
+        private System.Windows.Forms.TextBox PriceTxtBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NameTxtBox;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }

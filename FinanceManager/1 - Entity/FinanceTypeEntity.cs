@@ -17,7 +17,7 @@ namespace FinanceManager._1___Entity
 
     public enum Types
     { 
-        gain, 
-        debt
+        gain = 1, 
+        debt = 2
     }
 }

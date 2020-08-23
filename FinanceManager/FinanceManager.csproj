@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1 - Entity\FinanceTypeEntity.cs" />
+    <Compile Include="2 - DAL\FinanceTypeDAL.cs" />
+    <Compile Include="3 - Controller\FinanceTypeController.cs" />
     <Compile Include="3 - Controller\PersonController.cs" />
     <Compile Include="2 - DAL\PersonDAL.cs" />
     <Compile Include="1 - Entity\DataModel.Context.cs">
