@@ -92,6 +92,12 @@
     <Compile Include="3 - Controller\PersonController.cs" />
     <Compile Include="2 - DAL\PersonDAL.cs" />
     <Compile Include="1 - Entity\PersonEntity.cs" />
+    <Compile Include="4 - GUI\Finances.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="4 - GUI\Finances.Designer.cs">
+      <DependentUpon>Finances.cs</DependentUpon>
+    </Compile>
     <Compile Include="4 - GUI\FinanceTypesRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="4 - GUI\PersonRegister.Designer.cs">
       <DependentUpon>PersonRegister.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="4 - GUI\Finances.resx">
+      <DependentUpon>Finances.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="4 - GUI\FinanceTypesRegister.resx">
       <DependentUpon>FinanceTypesRegister.cs</DependentUpon>
     </EmbeddedResource>

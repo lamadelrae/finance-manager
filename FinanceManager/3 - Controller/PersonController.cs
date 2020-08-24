@@ -18,5 +18,12 @@ namespace FinanceManager.Controller
 
             Form.ToolTipLabel.Text = "Saved with succes!";
         }
+
+        public List<Person> GetPeople()
+        {
+            var PersonDAL = new PersonDAL();
+            var People = PersonDAL.SelectPeople();
+            return People;
+        }
     }
 }

@@ -18,5 +18,22 @@ namespace FinanceManager.DAL
                 context.SaveChanges();
             }
         }
+
+        public List<Person> SelectPeople()
+        {
+            List<Person> PeopleList = new List<Person>();
+
+            using (var context = new FMEntities())
+            {
+                var Query = (from p in context.People
+                             select p).ToList();
+
+                foreach(var Person in Query)
+                {
+                    PeopleList.Add(Person);
+                }
+            }
+            return PeopleList;
+        }
     }
 }
