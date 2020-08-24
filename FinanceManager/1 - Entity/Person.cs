@@ -18,7 +18,6 @@ namespace FinanceManager._1___Entity
         public string PersonName { get; set; }
         public Nullable<int> PersonAge { get; set; }
         public Nullable<decimal> PersonMonthlyIncome { get; set; }
-        public byte[] PersonImage { get; set; }
         public string Status { get; set; }
     }
 }

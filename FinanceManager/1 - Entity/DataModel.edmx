@@ -58,6 +58,12 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FMEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="FinanceTypes" EntityType="FMModel.FinanceType" />
+          <EntitySet Name="FinanceType_MonthyFinance" EntityType="FMModel.FinanceType_MonthyFinance" />
+          <EntitySet Name="MonthlyFinances" EntityType="FMModel.MonthlyFinance" />
+          <EntitySet Name="People" EntityType="FMModel.Person" />
+        </EntityContainer>
         <EntityType Name="FinanceType">
           <Key>
             <PropertyRef Name="UUID" />
@@ -99,65 +105,58 @@
           <Property Name="PersonName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="PersonAge" Type="Int32" />
           <Property Name="PersonMonthlyIncome" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="PersonImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="FMEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="FinanceTypes" EntityType="Self.FinanceType" />
-          <EntitySet Name="FinanceType_MonthyFinance" EntityType="Self.FinanceType_MonthyFinance" />
-          <EntitySet Name="MonthlyFinances" EntityType="Self.MonthlyFinance" />
-          <EntitySet Name="People" EntityType="Self.Person" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FMModelStoreContainer" CdmEntityContainer="FMEntities">
+        <EntityContainerMapping StorageEntityContainer="FMModelStoreContainer" CdmEntityContainer="FMEntities" >
           <EntitySetMapping Name="FinanceTypes">
             <EntityTypeMapping TypeName="FMModel.FinanceType">
               <MappingFragment StoreEntitySet="FinanceType">
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UUID" ColumnName="UUID" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FinanceType_MonthyFinance">
             <EntityTypeMapping TypeName="FMModel.FinanceType_MonthyFinance">
               <MappingFragment StoreEntitySet="FinanceType_MonthyFinance">
-                <ScalarProperty Name="UUID" ColumnName="UUID" />
-                <ScalarProperty Name="FinanceTypeUUID" ColumnName="FinanceTypeUUID" />
-                <ScalarProperty Name="MonthlyFinanceUUID" ColumnName="MonthlyFinanceUUID" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MonthlyFinanceUUID" ColumnName="MonthlyFinanceUUID" />
+                <ScalarProperty Name="FinanceTypeUUID" ColumnName="FinanceTypeUUID" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MonthlyFinances">
             <EntityTypeMapping TypeName="FMModel.MonthlyFinance">
               <MappingFragment StoreEntitySet="MonthlyFinance">
-                <ScalarProperty Name="UUID" ColumnName="UUID" />
-                <ScalarProperty Name="PersonUUID" ColumnName="PersonUUID" />
-                <ScalarProperty Name="DateMade" ColumnName="DateMade" />
-                <ScalarProperty Name="Month" ColumnName="Month" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="MonthIncome" ColumnName="MonthIncome" />
-                <ScalarProperty Name="MonthOutcome" ColumnName="MonthOutcome" />
-                <ScalarProperty Name="NetIncome" ColumnName="NetIncome" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="NetIncome" ColumnName="NetIncome" />
+                <ScalarProperty Name="MonthOutcome" ColumnName="MonthOutcome" />
+                <ScalarProperty Name="MonthIncome" ColumnName="MonthIncome" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="DateMade" ColumnName="DateMade" />
+                <ScalarProperty Name="PersonUUID" ColumnName="PersonUUID" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="People">
             <EntityTypeMapping TypeName="FMModel.Person">
               <MappingFragment StoreEntitySet="Person">
-                <ScalarProperty Name="UUID" ColumnName="UUID" />
-                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
-                <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
-                <ScalarProperty Name="PersonMonthlyIncome" ColumnName="PersonMonthlyIncome" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PersonMonthlyIncome" ColumnName="PersonMonthlyIncome" />
+                <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

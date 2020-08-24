@@ -10,7 +10,7 @@ namespace FinanceManager._1___Entity
     {
         public Guid UUID { get; set; }
         public string Name { get; set; }
-        public Types Types { get; set; }
+        public Types Type { get; set; }
         public decimal Price { get; set; }
         public char Status { get; set; }
     }

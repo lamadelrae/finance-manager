@@ -58,11 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1 - Entity\FinanceTypeEntity.cs" />
-    <Compile Include="2 - DAL\FinanceTypeDAL.cs" />
-    <Compile Include="3 - Controller\FinanceTypeController.cs" />
-    <Compile Include="3 - Controller\PersonController.cs" />
-    <Compile Include="2 - DAL\PersonDAL.cs" />
+    <Compile Include="1 - Entity\ComboxItem.cs" />
     <Compile Include="1 - Entity\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +77,7 @@
     <Compile Include="1 - Entity\FinanceType.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="1 - Entity\FinanceTypeEntity.cs" />
     <Compile Include="1 - Entity\FinanceType_MonthyFinance.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -90,6 +87,10 @@
     <Compile Include="1 - Entity\Person.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="2 - DAL\FinanceTypeDAL.cs" />
+    <Compile Include="3 - Controller\FinanceTypeController.cs" />
+    <Compile Include="3 - Controller\PersonController.cs" />
+    <Compile Include="2 - DAL\PersonDAL.cs" />
     <Compile Include="1 - Entity\PersonEntity.cs" />
     <Compile Include="4 - GUI\FinanceTypesRegister.cs">
       <SubType>UserControl</SubType>

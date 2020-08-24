@@ -97,7 +97,7 @@
             this.btnSave.Location = new System.Drawing.Point(8, 125);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 23);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -115,15 +115,14 @@
             this.PersonAge.Location = new System.Drawing.Point(8, 73);
             this.PersonAge.Name = "PersonAge";
             this.PersonAge.Size = new System.Drawing.Size(90, 20);
-            this.PersonAge.TabIndex = 11;
+            this.PersonAge.TabIndex = 2;
             // 
             // PersonMonthly
             // 
             this.PersonMonthly.Location = new System.Drawing.Point(8, 99);
-            this.PersonMonthly.Mask = "$000,000.00";
             this.PersonMonthly.Name = "PersonMonthly";
             this.PersonMonthly.Size = new System.Drawing.Size(90, 20);
-            this.PersonMonthly.TabIndex = 12;
+            this.PersonMonthly.TabIndex = 3;
             // 
             // entityCommand1
             // 

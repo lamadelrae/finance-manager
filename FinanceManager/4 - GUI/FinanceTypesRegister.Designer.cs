@@ -55,7 +55,7 @@
             this.TypesCombo.Location = new System.Drawing.Point(40, 54);
             this.TypesCombo.Name = "TypesCombo";
             this.TypesCombo.Size = new System.Drawing.Size(144, 21);
-            this.TypesCombo.TabIndex = 2;
+            this.TypesCombo.TabIndex = 1;
             // 
             // PriceTxtBox
             // 
@@ -93,17 +93,18 @@
             // 
             // NameTxtBox
             // 
+            this.NameTxtBox.AcceptsTab = true;
             this.NameTxtBox.Location = new System.Drawing.Point(40, 83);
             this.NameTxtBox.Name = "NameTxtBox";
             this.NameTxtBox.Size = new System.Drawing.Size(144, 20);
-            this.NameTxtBox.TabIndex = 7;
+            this.NameTxtBox.TabIndex = 2;
             // 
             // SaveBtn
             // 
             this.SaveBtn.Location = new System.Drawing.Point(40, 135);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 22);
-            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
