@@ -19,13 +19,6 @@ C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\ne
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.TagHelpers.input.cache
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.TagHelpers.output.cache
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorCoreGenerate.cache
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
-C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorTargetAssemblyInfo.cache
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorTargetAssemblyInfo.cs
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.Views.pdb
@@ -35,3 +28,6 @@ C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\ne
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.pdb
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.genruntimeconfig.cache
 C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CopyComplete
+C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
+C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DefaultLayout.cshtml.g.cs
+C:\Users\Matthew Almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs

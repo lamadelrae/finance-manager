@@ -14392,38 +14392,18 @@
   "RootNamespace": "FinanceManager",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Login\\Login.cshtml",
+      "TargetPath": "Views\\Login\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Shared\\DefaultLayout.cshtml",
+      "TargetPath": "Views\\Shared\\DefaultLayout.cshtml",
       "FileKind": "mvc"
     }
   ],
