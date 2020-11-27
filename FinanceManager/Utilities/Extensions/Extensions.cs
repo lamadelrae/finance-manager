@@ -29,5 +29,10 @@ namespace FinanceManager.Utilities.Extensions
         }
 
         public static bool IsNull(this object input) => input == null;
+
+        public static decimal ToDecimal(this string input)
+        {
+            return Convert.ToDecimal(input);
+        }
     }
 }

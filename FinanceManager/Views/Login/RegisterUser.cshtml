@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model FinanceManager.Models.ViewModels.RegisterViewModel
+
+<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="container">
+        <form action="/Login/SaveUser">
+            <div class="form-group">
+                <label>Username</label>
+                @Html.TextBoxFor(m => m.Username, new { Class = "form-control", Type = "text" })
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                @Html.TextBoxFor(m => m.Password, new { Class = "form-control", Type = "password" })
+            </div>
+            <div class="form-group">
+                <label>Salary</label>
+                @Html.TextBoxFor(m => m.Salary, new { Class = "form-control", Type = "text" })
+            </div>
+            <div class="form-group">
+                <label>Max Expenses</label>
+                @Html.TextBoxFor(m => m.MaxExpenses, new { Class = "form-control", Type = "text" })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    $("#Salary").maskMoney();
+    $("#MaxExpenses").maskMoney();
+</script>

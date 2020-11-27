@@ -61,5 +61,29 @@ namespace FinanceManager.Controllers.Login
 
             return loginObj.Password.ToSha256() == userObj.Password;
         }
+
+        public ActionResult SaveUser(RegisterViewModel registerObj)
+        {
+            try
+            {
+                context.Users.Add(new Users
+                {
+                    Username = registerObj.Username,
+                    Password = registerObj.Password.ToSha256(),
+                    Salary = registerObj.Salary.ToDecimal(),
+                    MaxExpenses = registerObj.MaxExpenses.ToDecimal()
+                });
+
+                context.SaveChanges();
+
+                return View("Login");
+            }
+            catch(Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+
+                return View("Regiser");
+            }
+        }
     }
 }
