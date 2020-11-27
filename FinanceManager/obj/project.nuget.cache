@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lzK2fJg9vjeyS1lsfFXYbyi7m2iO7fYRcch7hdZBDa9Fbe9dyIyfx46IX7A1tAHuskWrCErfsdZNXe5XE5WAOw==",
+  "dgSpecHash": "vi+8dS60PBsfsJCWlZ0SQ4H3NRTjqDTtCeb09ikKCaI4CJrLev6/pNz3BMK6HlsYNwIPowetztiVYJdqqac48w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+  "projectFilePath": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matthew Almeida\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.0\\microsoft.aspnetcore.mvc.razor.extensions.3.1.0.nupkg.sha512",
     "C:\\Users\\Matthew Almeida\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.0\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.0.nupkg.sha512",

@@ -2,26 +2,32 @@
 @model FinanceManager.Models.ViewModels.LoginViewModel
 
 
-@if ((bool)ViewBag.IsFirstAccess)
+@if (string.IsNullOrEmpty(ViewBag.Message) != true)
 {
     <br>
     <div class="container">
-        <div class="alert alert-primary" role="alert">
-            Click here to register. <a class="btn btn-primary" href="/Login/RegisterUser">Register</a>
+        <div class="alert alert-primary form-inline" role="alert">
+            @ViewBag.Message
+            &nbsp;
+            @if ((bool)ViewBag.IsFirstAccess)
+            {
+                <b><a href="/Login/RegisterUser">Click here to register.</a></b>
+            }
         </div>
     </div>
 }
+
 
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
         <form action="/Login/SubmitLogin">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" id="Username" placeholder="Enter email">
+                @Html.TextBoxFor(m => m.Username, new { Class = "form-control", PlaceHolder = "Enter Username", Required = true })
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" id="Password" placeholder="Password">
+                @Html.TextBoxFor(m => m.Password, new { Type = "Password", Class = "form-control", PlaceHolder = "Enter Password", Required = true })
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Content\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
 

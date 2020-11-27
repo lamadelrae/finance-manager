@@ -14405,6 +14405,11 @@
       "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Shared\\DefaultLayout.cshtml",
       "TargetPath": "Views\\Shared\\DefaultLayout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Login\\RegisterUser.cshtml",
+      "TargetPath": "Views\\Login\\RegisterUser.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

@@ -47,6 +47,8 @@ namespace FinanceManager.Controllers.Login
             }
             catch (Exception ex)
             {
+                ViewBag.Message = ex.Message;
+
                 ViewBag.IsFirstAccess = ex is FirstAccessException;
 
                 return View("Login");
@@ -54,7 +56,7 @@ namespace FinanceManager.Controllers.Login
 
         }
 
-        public bool IsLoginOk(LoginViewModel loginObj, Users userObj)
+        private bool IsLoginOk(LoginViewModel loginObj, Users userObj)
         {
             if (userObj.IsNull())
                 throw new Exception("User not found.");
@@ -70,15 +72,17 @@ namespace FinanceManager.Controllers.Login
                 {
                     Username = registerObj.Username,
                     Password = registerObj.Password.ToSha256(),
-                    Salary = registerObj.Salary.ToDecimal(),
-                    MaxExpenses = registerObj.MaxExpenses.ToDecimal()
+                    Salary = registerObj.Salary.Replace(",", string.Empty).ToDecimal(),
+                    MaxExpenses = registerObj.MaxExpenses.Replace(",", string.Empty).ToDecimal()
                 });
 
                 context.SaveChanges();
 
+                ViewBag.IsFirstAccess = false;
+
                 return View("Login");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Message = ex.Message;
 
