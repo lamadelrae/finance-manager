@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FinanceManager.Controllers.Months
+namespace FinanceManager.Controllers.Bills
 {
-    public class Months : Controller
+    public class BillsController : Controller
     {
-        public IActionResult Index()
+        public ActionResult Bills()
         {
             return View();
         }

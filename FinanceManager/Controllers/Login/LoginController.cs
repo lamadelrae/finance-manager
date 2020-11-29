@@ -7,6 +7,7 @@ using FinanceManager.Models.ViewModels;
 using FinanceManager.Controllers.Session;
 using System;
 using FinanceManager.Models.Exeptions;
+using System.Threading.Tasks;
 
 namespace FinanceManager.Controllers.Login
 {
@@ -38,6 +39,9 @@ namespace FinanceManager.Controllers.Login
 
                 if (IsLoginOk(loginObj, userObj))
                 {
+                    if (LastYearIsNotThisYear())
+                        InsertMonths(userObj.Id);
+
                     SessionController.GetInstance.SetSession(userObj);
 
                     return View(@"~/Views/Home/Home.cshtml");
@@ -88,6 +92,34 @@ namespace FinanceManager.Controllers.Login
 
                 return View("Regiser");
             }
+        }
+
+        public bool LastYearIsNotThisYear()
+        {
+            var lastMonth = context.Months.ToList();
+
+            if (lastMonth.Count == 0)
+                return true;
+            else
+                return lastMonth.OrderByDescending(i => i.Month)
+                    .Take(1).FirstOrDefault()
+                    .Month.Year < DateTime.Now.Year;
+        }
+
+        public void InsertMonths(int userId)
+        {
+            for(int i = 1; i <= 12; i++)
+            {
+                context.Months.Add(new Models.DataBase.Months
+                {
+                    User_Id = userId,
+                    Month = Convert.ToDateTime($"{DateTime.Now.Year}-{i}-01"),
+                    TotalIncome = 0,
+                    TotalOutcome = 0
+                });
+            }
+
+            context.SaveChanges();
         }
     }
 }

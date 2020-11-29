@@ -757,3 +757,5 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CoreCompileInputs.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Matthew\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Bills\Bills.cshtml.g.cs
+C:\Users\Matthew\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\Bills.cshtml.g.cs
