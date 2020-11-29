@@ -13,6 +13,6 @@ namespace FinanceManager.Controllers
         public ActionResult Home()
         {
             return View();
-        }
+        }   
     }
 }

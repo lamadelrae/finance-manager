@@ -12,14 +12,20 @@ namespace FinanceManager.Models.DataBase
 
         public static string DbVersion { get; private set; } = "1";
 
-        public DbSet<Users> Users { get; set; }
-
-        public DbSet<DatabaseVersion>  DatabaseVersion {get; set;}
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(GetConnection());
         }
+
+        public DbSet<Users> Users { get; set; }
+
+        public DbSet<DatabaseVersion> DatabaseVersion { get; set; }
+
+        public DbSet<Bills> Bills { get; set; }
+
+        public DbSet<Months> Months { get; set; }
+
+        public DbSet<Months_Bills> Months_Bills { get; set; }
 
         public static string GetServerConnection()
         {
