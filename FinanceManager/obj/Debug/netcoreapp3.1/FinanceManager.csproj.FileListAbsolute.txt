@@ -733,9 +733,6 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csprojAssemblyReference.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.AssemblyInfoInputs.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.AssemblyInfo.cs
-C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CoreCompileInputs.cache
-C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorAssemblyInfo.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorAssemblyInfo.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.TagHelpers.input.cache
@@ -756,3 +753,7 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.pdb
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.genruntimeconfig.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Home\Home.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Navbar.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CoreCompileInputs.cache
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cache

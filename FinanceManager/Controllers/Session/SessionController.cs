@@ -10,7 +10,7 @@ namespace FinanceManager.Controllers.Session
 {
     public class SessionController
     {
-        public SessionModel Session { get; private set; } = new SessionModel();
+        public SessionModel Session { get; private set; }
 
         private static SessionController Instance = null;
 
@@ -25,9 +25,11 @@ namespace FinanceManager.Controllers.Session
             }
         }
 
-
         public void SetSession(Users userObj)
         {
+            if (Session.IsNull())
+                Session = new SessionModel();
+
             Session.Username = userObj.Username;
         }
     }

@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="Views\Shared\" />
+    <Compile Remove="Content\**" />
+    <Content Remove="Content\**" />
+    <EmbeddedResource Remove="Content\**" />
+    <None Remove="Content\**" />
   </ItemGroup>
 
   <ItemGroup>

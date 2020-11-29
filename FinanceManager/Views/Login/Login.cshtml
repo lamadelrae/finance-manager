@@ -1,6 +1,9 @@
 ﻿@page
 @model FinanceManager.Models.ViewModels.LoginViewModel
 
+@{ 
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
 
 @if (string.IsNullOrEmpty(ViewBag.Message) != true)
 {

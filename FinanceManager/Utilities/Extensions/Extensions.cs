@@ -39,8 +39,10 @@ namespace FinanceManager.Utilities.Extensions
             return input != null;
         }
 
-        public static decimal ToDecimal(this string input)
+        public static decimal MoneyToDecimal(this string input)
         {
+            input = input.Replace(",", string.Empty);
+
             return Convert.ToDecimal(input);
         }
     }

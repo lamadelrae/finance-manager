@@ -72,8 +72,8 @@ namespace FinanceManager.Controllers.Login
                 {
                     Username = registerObj.Username,
                     Password = registerObj.Password.Trim().ToSha256(),
-                    Salary = registerObj.Salary.Replace(",", string.Empty).ToDecimal(),
-                    MaxExpenses = registerObj.MaxExpenses.Replace(",", string.Empty).ToDecimal()
+                    Salary = registerObj.Salary.MoneyToDecimal(),
+                    MaxExpenses = registerObj.MaxExpenses.MoneyToDecimal()
                 });
 
                 context.SaveChanges();
