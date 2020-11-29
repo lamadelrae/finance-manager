@@ -20,7 +20,7 @@
 
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
-        <form action="/Login/SubmitLogin">
+        <form action="/Login/SubmitLogin" method="post">
             <div class="form-group">
                 <label>Username</label>
                 @Html.TextBoxFor(m => m.Username, new { Class = "form-control", PlaceHolder = "Enter Username", Required = true })

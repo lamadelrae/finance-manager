@@ -34,13 +34,13 @@ namespace FinanceManager.Controllers.Login
                 if (context.Users.ToList().Count() == 0)
                     throw new FirstAccessException("No users in DataBase, please register.");
 
-                var userObj = context.Users.Where(i => loginObj.Username == loginObj.Username).FirstOrDefault();
+                var userObj = context.Users.Where(i => i.Username == loginObj.Username).FirstOrDefault();
 
                 if (IsLoginOk(loginObj, userObj))
                 {
                     SessionController.GetInstance.SetSession(userObj);
 
-                    return View("Home");
+                    return View(@"~/Views/Home/Home.cshtml");
                 }
                 else
                     throw new Exception("Wrong password");
@@ -61,7 +61,7 @@ namespace FinanceManager.Controllers.Login
             if (userObj.IsNull())
                 throw new Exception("User not found.");
 
-            return loginObj.Password.ToSha256() == userObj.Password;
+            return loginObj.Password.Trim().ToSha256() == userObj.Password;
         }
 
         public ActionResult SaveUser(RegisterViewModel registerObj)
@@ -71,7 +71,7 @@ namespace FinanceManager.Controllers.Login
                 context.Users.Add(new Users
                 {
                     Username = registerObj.Username,
-                    Password = registerObj.Password.ToSha256(),
+                    Password = registerObj.Password.Trim().ToSha256(),
                     Salary = registerObj.Salary.Replace(",", string.Empty).ToDecimal(),
                     MaxExpenses = registerObj.MaxExpenses.Replace(",", string.Empty).ToDecimal()
                 });

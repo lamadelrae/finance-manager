@@ -19,11 +19,11 @@ namespace FinanceManager.Utilities.Extensions
 
                 StringBuilder builder = new StringBuilder();
 
-                Parallel.For(0, bytes.Length, i =>
+                for (int i = 0; i < bytes.Length; i++)
                 {
                     builder.Append(bytes[i].ToString("x2"));
-                });
-                
+                }
+
                 return builder.ToString();
             }
         }

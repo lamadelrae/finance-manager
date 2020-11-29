@@ -755,3 +755,4 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.dll
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.pdb
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.genruntimeconfig.cache
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Home\Home.cshtml.g.cs

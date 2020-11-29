@@ -70,6 +70,25 @@ namespace FinanceManager.Controllers
             }
         }
 
+        public bool DbNotExists()
+        {
+            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            {
+                string query = @"SELECT name 
+                                 FROM master.dbo.sysdatabases 
+                                 WHERE ('[' + name + ']' = 'FinanceManager'
+                                 OR name = 'FinanceManager')";
+
+                var sqlCommand = new SqlCommand(query, con);
+
+                con.Open();
+                var reader = sqlCommand.ExecuteReader();
+                con.Close();
+
+                return (string)reader["name"] == "FinanceManager";
+            }
+        }
+
         public string GetDbVersion()
         {
             using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
@@ -88,25 +107,6 @@ namespace FinanceManager.Controllers
                 con.Close();
 
                 return version;
-            }
-        }
-
-        public bool DbNotExists()
-        {
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
-            {
-                string query = @"SELECT name 
-                                 FROM master.dbo.sysdatabases 
-                                 WHERE ('[' + name + ']' = 'FinanceManager'
-                                 OR name = 'FinanceManager')";
-
-                var sqlCommand = new SqlCommand(query, con);
-
-                con.Open();
-                var reader = sqlCommand.ExecuteReader();
-                con.Close();
-
-                return (string)reader["name"] == "FinanceManager";
             }
         }
 
