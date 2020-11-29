@@ -17,4 +17,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Months\" />
+    <Folder Include="Views\Bills\" />
+  </ItemGroup>
+
 </Project>
