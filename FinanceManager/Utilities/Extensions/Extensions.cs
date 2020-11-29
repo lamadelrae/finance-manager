@@ -9,7 +9,7 @@ namespace FinanceManager.Utilities.Extensions
 {
     public static class Extensions
     {
-        public static int ToInt(object input) => Convert.ToInt32(input);
+        public static int ToInt(this object input) => Convert.ToInt32(input);
 
         public static string ToSha256(this string input)
         {
@@ -29,6 +29,15 @@ namespace FinanceManager.Utilities.Extensions
         }
 
         public static bool IsNull(this object input) => input == null;
+
+        public static bool IsNotNull(this object input) => input != null;
+
+        public static bool IsNotNull<T>(this T input, out T result)
+        {
+            result = input != null ? input : default;
+
+            return input != null;
+        }
 
         public static decimal ToDecimal(this string input)
         {
