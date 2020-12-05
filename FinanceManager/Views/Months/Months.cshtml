@@ -4,7 +4,26 @@
 <br>
 <br>
 <br>
+
+@if (string.IsNullOrEmpty(ViewBag.Message) != true)
+{
+    <br>
+    <div class="container">
+        <div class="alert alert-primary form-inline" role="alert">
+            @ViewBag.Message
+        </div>
+    </div>
+}
+
 <div class="container">
+    <div class="form-inline">
+        <form action="/Months/Search" method="post">
+            <input type="date" id="initialDate" name="initialDate" class="form-control">
+            <input type="date" id="finalDate" name="finalDate" class="form-control">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </div>
+
     <br>
     <br>
     <table class="table">
@@ -22,14 +41,14 @@
 
             @foreach (var month in Model)
             {
-            <tr>
-                <th scope="row">@month.Id</th>
-                <td>@month.Username</td>
-                <td>@month.Month</td>
-                <td>@month.TotalIncome</td>
-                <td>@month.TotalOutcome</td>
-                <td><a href="/Months/EditMonth/?id=@month.Id" class="btn btn-primary">Edit</a></td>
-            </tr>
+                <tr>
+                    <th scope="row">@month.Id</th>
+                    <td>@month.Username</td>
+                    <td>@month.Month</td>
+                    <td>@month.TotalIncome</td>
+                    <td>@month.TotalOutcome</td>
+                    <td><a href="/Months/EditMonth/?id=@month.Id" class="btn btn-primary">Edit</a></td>
+                </tr>
             }
         </tbody>
     </table>

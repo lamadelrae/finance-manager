@@ -18,17 +18,35 @@ namespace FinanceManager.Controllers.Months
 
         public ActionResult Months()
         {
-            return View(GetAllMonths());
+            try
+            {
+                return View(GetAllMonths());
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Messahe = ex.Message;
+
+                return View("Months", new List<MonthsViewModel>());
+            }
         }
 
         public ActionResult Search(DateTime initialDate, DateTime finalDate)
         {
-            return View("Months", GetMonthsByDate(initialDate, finalDate));
+            try
+            {
+                return View("Months", GetMonthsByDate(initialDate, finalDate));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+
+                return View("Months", new List<MonthsViewModel>());
+            }
         }
 
         private List<MonthsViewModel> GetAllMonths()
         {
-            return Repository.GetAll().Select(i => new MonthsViewModel 
+            return Repository.GetAll().Select(i => new MonthsViewModel
             {
                 Id = i.Id.ToString(),
                 Username = Repository.Context.Users.Find(i.User_Id).Username,
@@ -40,17 +58,19 @@ namespace FinanceManager.Controllers.Months
 
         private List<MonthsViewModel> GetMonthsByDate(DateTime initialDate, DateTime finalDate)
         {
-            if (initialDate.IsNull())
-                throw new Exception("Preencha a data inicial ao menos.");
+            if (initialDate == DateTime.MinValue)
+                throw new Exception("Fill the Initial Date at least");
 
             Expression<Func<Models.DataBase.Months, bool>> expression = i => i.Month > initialDate;
 
-            if (finalDate.IsNotNull())
+            if (finalDate != DateTime.MinValue)
                 expression = expression.And(i => i.Month < finalDate);
 
-            return Repository.Context.Months.Where(expression).Select(i => new MonthsViewModel 
+            var listMonths = Repository.Context.Months.Where(expression).ToList();
+
+            return listMonths.Select(i => new MonthsViewModel
             {
-                Id = i.Id.ToString(), 
+                Id = i.Id.ToString(),
                 Month = i.Month.ToString("MM/yyyy"),
                 Username = Repository.Context.Users.Find(i.User_Id).Username,
                 TotalIncome = i.TotalIncome.ToString(),
