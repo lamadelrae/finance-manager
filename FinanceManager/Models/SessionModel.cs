@@ -7,6 +7,7 @@ namespace FinanceManager.Models
 {
     public class SessionModel
     {
+        public int UserId { get; set; }
         public string Username { get; set; }
     }
 }

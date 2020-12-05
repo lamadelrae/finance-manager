@@ -1,0 +1,20 @@
+﻿@model FinanceManager.Models.ViewModels.BillsViewModel
+<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="container">
+        <form action="/Bills/AddBill" method="post">
+            <div class="form-group">
+                <label>Description</label>
+                @Html.TextBoxFor(m => m.Description, new { Class = "form-control", Type = "text", Required = true })
+            </div>
+            <div class="form-group">
+                <label>Value</label>
+                @Html.TextBoxFor(m => m.Value, new { Class = "form-control", Required = true })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    $("#Value").maskMoney();
+</script>

@@ -31,6 +31,7 @@ namespace FinanceManager.Controllers.Session
                 Session = new SessionModel();
 
             Session.Username = userObj.Username;
+            Session.UserId = userObj.Id;
         }
     }
 }

@@ -52,7 +52,7 @@ namespace FinanceManager.Controllers.Login
 
                     SessionController.GetInstance.SetSession(userObj);
 
-                    return View(@"~/Views/Home/Home.cshtml");
+                    return Redirect("/Home/Home");
                 }
                 else
                     throw new Exception("Wrong password");
@@ -65,7 +65,6 @@ namespace FinanceManager.Controllers.Login
 
                 return View("Login");
             }
-
         }
 
         private bool IsLoginOk(LoginViewModel loginObj, Users userObj)

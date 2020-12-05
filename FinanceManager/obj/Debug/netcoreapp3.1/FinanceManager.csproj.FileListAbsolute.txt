@@ -763,3 +763,4 @@ C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\ne
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CoreCompileInputs.cache
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Bills\BillForm.cshtml.g.cs
