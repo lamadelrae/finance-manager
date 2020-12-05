@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using FinanceManager.Models.DataBase;
 using FinanceManager.Utilities.Extensions;
+using System.Data.SqlClient;
 
 namespace FinanceManager.Controllers
 {
@@ -16,63 +17,9 @@ namespace FinanceManager.Controllers
             return View("Database");
         }
 
-        public ActionResult AttachDataBase()
-        {
-            try
-            {
-                var connection = new SqlConnection(Models.DataBase.FinanceManagerContext.GetServerConnection());
-
-                string command = $@"CREATE DATABASE FinanceManager ON PRIMARY 
-                                   (NAME = FinanceManager, 
-                                   FILENAME = '{AppDomain.CurrentDomain.BaseDirectory}\FinanceManager.mdf', 
-                                   SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%)
-                                   LOG ON (NAME = FinanceManager_Log, 
-                                   FILENAME = '{AppDomain.CurrentDomain.BaseDirectory}\FinanceManager_Log.ldf', 
-                                   SIZE = 1MB, 
-                                   MAXSIZE = 5MB, 
-                                   FILEGROWTH = 10%)
-								   FOR ATTACH;";
-
-                var sqlCommand = new SqlCommand(command, connection);
-
-                connection.Open();
-                sqlCommand.ExecuteNonQuery();
-
-                return View("~/Views/Login/Login.cshtml");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public void UpdateDatabase()
-        {
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
-            {
-                if (DbNotExists())
-                    new SqlCommand(DatabaseVersionQueries.QueryDictionary[1], con);
-
-                if (DbIsNotRequiredVersion())
-                {
-                    con.Open();
-
-                    var queryList = DatabaseVersionQueries.QueryDictionary
-                        .Where(i => i.Key > GetDbVersion().ToInt()).ToList();
-
-                    Parallel.ForEach(queryList, query =>
-                    {
-                        new SqlCommand(query.Value, con);
-                    });
-
-                    con.Close();
-                }
-            }
-        }
-
         public bool DbNotExists()
         {
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            using (var con = new SqlConnection(FinanceManagerContext.GetServerConnection()))
             {
                 string query = @"SELECT name 
                                  FROM master.dbo.sysdatabases 
@@ -81,15 +28,75 @@ namespace FinanceManager.Controllers
 
                 var sqlCommand = new SqlCommand(query, con);
 
+                string name = string.Empty;
+
                 con.Open();
                 var reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                    name = (string)reader["name"];
+
                 con.Close();
 
-                return (string)reader["name"] == "FinanceManager";
+                return name != "FinanceManager";
             }
         }
 
-        public string GetDbVersion()
+        public bool DbIsNotRequiredVersion()
+        {
+            return GetDbVersion() != FinanceManagerContext.DbVersion;
+        }
+
+        public void CreateDatabase()
+        {
+            using (var con = new SqlConnection(FinanceManagerContext.GetServerConnection()))
+            {
+                con.Open();
+                var query = new DatabaseVersionQueries().QueryDictionary[1];
+                new SqlCommand(query, con).ExecuteNonQuery();
+                con.Close();
+            }
+
+            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            {
+                con.Open();
+
+                Parallel.ForEach(new DatabaseVersionQueries().QueryDictionary.Where(i => i.Key > 1), i =>
+                {
+                    new SqlCommand(i.Value, con).ExecuteNonQuery();
+                });
+
+                var insertVersion = $"INSERT INTO DatabaseVersion VALUES ({FinanceManagerContext.DbVersion})";
+
+                new SqlCommand(insertVersion, con).ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+
+        public void UpdateDatabase()
+        {
+            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            {
+                con.Open();
+
+                var queryList = new DatabaseVersionQueries().QueryDictionary
+                    .Where(i => i.Key > GetDbVersion().ToInt()).ToList();
+
+                Parallel.ForEach(queryList, query =>
+                {
+                    new SqlCommand(query.Value, con).ExecuteNonQuery();
+                });
+
+                string updateVersion = $"UPDATE DatabaseVersion SET DbVersion = '{FinanceManagerContext.DbVersion}'";
+
+                new SqlCommand(updateVersion, con).ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+
+        private string GetDbVersion()
         {
             using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
             {
@@ -99,20 +106,17 @@ namespace FinanceManager.Controllers
 
                 string version = string.Empty;
                 con.Open();
-                var result = sqlCommand.ExecuteReader();
 
-                while (result.IsNotNull())
-                    version = (string)result["DbVersion"];
+                var reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    version = (string)reader["DbVersion"];
+                }
 
                 con.Close();
 
                 return version;
             }
-        }
-
-        public bool DbIsNotRequiredVersion()
-        {
-            return GetDbVersion() == FinanceManagerContext.DbVersion;
         }
     }
 }

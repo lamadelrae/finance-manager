@@ -5,52 +5,65 @@ using System.Threading.Tasks;
 
 namespace FinanceManager.Controllers
 {
-    public static class DatabaseVersionQueries
+    public class DatabaseVersionQueries
     {
-        public static Dictionary<int, string> QueryDictionary = new Dictionary<int, string>
-        {
-            {1, versionOne}
-        };
+        public Dictionary<int, string> QueryDictionary = new Dictionary<int, string>();
 
-        private const string versionOne = @"IF object_id('Users') IS NOT NULL
-                                               CREATE TABLE Users
+
+        public DatabaseVersionQueries()
+        {
+            QueryDictionary.Add(1, createDatabase);
+            QueryDictionary.Add(2, createDataBaseVersion);
+            QueryDictionary.Add(3, createUsers);
+            QueryDictionary.Add(4, createBills);
+            QueryDictionary.Add(5, createMonths);
+            QueryDictionary.Add(6, createMonths_Bills);
+        }
+
+        private string createDatabase = @$"CREATE DATABASE FinanceManager ON PRIMARY 
+                                                (NAME = FinanceManager, 
+                                                FILENAME = '{AppDomain.CurrentDomain.BaseDirectory}\FinanceManager.mdf', 
+                                                SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%)
+                                                LOG ON (NAME = FinanceManager_Log, 
+                                                FILENAME = '{AppDomain.CurrentDomain.BaseDirectory}\FinanceManager_Log.ldf', 
+                                                SIZE = 1MB, 
+                                                MAXSIZE = 5MB, 
+                                                FILEGROWTH = 10%)";
+
+        private string createUsers = @" CREATE TABLE Users
                                                (
                                                  Id int identity(1,1) primary key,
                                                  Username varchar(120) not null,
                                                  Password varchar(120) not null,
-                                                 Salary decimal(16, 2) not null,
-                                                 MaxExpenses decimal(16, 2) not null
-                                               );
-                                               
-                                               IF OBJECT_ID('DatabaseVersion') IS NOT NULL
-                                               CREATE TABLE DatabaseVersion
+                                                 Salary decimal (16, 2) not null,
+                                                 MaxExpenses decimal (16, 2) not null
+                                               );";
+
+        private string createDataBaseVersion = @"CREATE TABLE DatabaseVersion
                                                (
                                                   DbVersion varchar(30) primary key not null
-                                               )
+                                               )";
 
-                                               IF OBJECT_ID('Bills') IS NOT NULL
-                                               CREATE TABLE Bills
+        private string createBills = @"CREATE TABLE Bills
                                                (
                                                  Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
                                                  User_Id INT NOT NULL,
                                                  Description VARCHAR(120) NOT NULL,
                                                  Value DECIMAL(16, 2) NOT NULL
-                                               )
-                                               
-                                               IF OBJECT_ID('Months') IS NOT NULL
-                                               CREATE TABLE Months
+                                               )";
+
+        private string createMonths = @"CREATE TABLE Months
+                                        (
+                                         Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+                                         User_Id INT NOT NULL,
+                                         Month DATE NOT NULL,
+                                         TotalIncome DECIMAL(16, 2) NOT NULL,
+                                        TotalOutcome DECIMAL(16, 2) NOT NULL,
+                                        )";
+
+        private string createMonths_Bills = @"CREATE TABLE Months_Bills
                                                (
-                                                Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
-                                                User_Id INT NOT NULL,
-                                                Month DATE NOT NULL, 
-                                                TotalIncome DECIMAL (16, 2) NOT NULL,
-                                                TotalOutcome DECIMAL(16, 2) NOT NULL,
-                                               )
-                                               
-                                               IF OBJECT_ID('Months_Bills') IS NOT NULL
-                                               CREATE TABLE Months_Bills
-                                               (
-                                                 Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL, 
+                                                 Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
                                                  User_Id INT NOT NULL,
                                                  Month_Id INT NOT NULL,
                                                  Bill_Id INT NOT NULL,

@@ -32,6 +32,14 @@ namespace FinanceManager.Controllers.Login
         {
             try
             {
+                var db = new DatabaseController();
+
+                if (db.DbNotExists())
+                    db.CreateDatabase();
+
+                if (db.DbIsNotRequiredVersion())
+                    db.UpdateDatabase();
+
                 if (context.Users.ToList().Count() == 0)
                     throw new FirstAccessException("No users in DataBase, please register.");
 
@@ -108,7 +116,7 @@ namespace FinanceManager.Controllers.Login
 
         public void InsertMonths(int userId)
         {
-            for(int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 context.Months.Add(new Models.DataBase.Months
                 {
