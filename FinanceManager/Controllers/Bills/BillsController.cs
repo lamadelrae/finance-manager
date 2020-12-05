@@ -29,7 +29,7 @@ namespace FinanceManager.Controllers.Bills
         {
             var dbObj = Repository.GetById(id);
 
-            var billViewModel = new BillViewModel
+            var billViewModel = new BillFormViewModel
             {
                 Id = dbObj.Id.ToString(),
                 Description = dbObj.Description,
@@ -39,7 +39,7 @@ namespace FinanceManager.Controllers.Bills
             return View("BillForm", billViewModel);
         }
 
-        public ActionResult SubmitBill(BillViewModel billViewModel)
+        public ActionResult SubmitBill(BillFormViewModel billViewModel)
         {
             if (billViewModel.Id.IsNotNull())
                 return UpdateBill(billViewModel);
@@ -47,7 +47,7 @@ namespace FinanceManager.Controllers.Bills
                 return AddBill(billViewModel);
         }
 
-        private ActionResult UpdateBill(BillViewModel billViewModel)
+        private ActionResult UpdateBill(BillFormViewModel billViewModel)
         {
             var billObj = new Models.DataBase.Bills
             {
@@ -62,7 +62,7 @@ namespace FinanceManager.Controllers.Bills
             return Redirect("Bills");
         }
 
-        private ActionResult AddBill(BillViewModel billViewModel)
+        private ActionResult AddBill(BillFormViewModel billViewModel)
         {
             var billObj = new Models.DataBase.Bills
             {

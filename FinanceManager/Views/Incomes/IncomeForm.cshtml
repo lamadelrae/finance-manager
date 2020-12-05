@@ -1,7 +1,7 @@
-﻿@model FinanceManager.Models.ViewModels.BillFormViewModel
+﻿@model FinanceManager.Models.ViewModels.IncomeFormViewModel
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
-        <form action="/Bills/SubmitBill" method="post">
+        <form action="/Incomes/SubmitIncome" method="post">
             @Html.HiddenFor(m => m.Id)
             <div class="form-group">
                 <label>Description</label>
