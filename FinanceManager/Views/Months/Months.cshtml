@@ -1,0 +1,36 @@
+﻿@model List<FinanceManager.Models.ViewModels.MonthsViewModel>
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">User</th>
+                <th scope="col">Month</th>
+                <th scope="col">Total Income</th>
+                <th scope="col">Total Outcome</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var month in Model)
+            {
+            <tr>
+                <th scope="row">@month.Id</th>
+                <td>@month.Username</td>
+                <td>@month.Month</td>
+                <td>@month.TotalIncome</td>
+                <td>@month.TotalOutcome</td>
+                <td><a href="/Months/EditMonth/?id=@month.Id" class="btn btn-primary">Edit</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

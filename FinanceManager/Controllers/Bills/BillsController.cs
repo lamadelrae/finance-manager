@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using FinanceManager.Models.DataBase;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Utilities.Extensions;
+using FinanceManager.Utilities.DataAnnotations;
 
 namespace FinanceManager.Controllers.Bills
 {
+    [SessionValidation]
     public class BillsController : Controller
     {
         BaseRepository<Models.DataBase.Bills> Repository = new BaseRepository<Models.DataBase.Bills>();
