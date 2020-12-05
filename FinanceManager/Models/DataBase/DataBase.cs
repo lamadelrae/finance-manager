@@ -10,7 +10,7 @@ namespace FinanceManager.Models.DataBase
     {
         private readonly static string ConfigFile = $@"{AppDomain.CurrentDomain.BaseDirectory}\Config.txt";
 
-        public static string DbVersion { get; private set; } = "6";
+        public static string DbVersion { get; private set; } = "8";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,6 +26,10 @@ namespace FinanceManager.Models.DataBase
         public DbSet<Months> Months { get; set; }
 
         public DbSet<Months_Bills> Months_Bills { get; set; }
+
+        public DbSet<Incomes> Incomes { get; set; }
+
+        public DbSet<Months_Incomes> Months_Incomes { get; set; }
 
         public static string GetServerConnection()
         {

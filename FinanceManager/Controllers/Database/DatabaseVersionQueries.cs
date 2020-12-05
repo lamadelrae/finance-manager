@@ -18,6 +18,8 @@ namespace FinanceManager.Controllers
             QueryDictionary.Add(4, createBills);
             QueryDictionary.Add(5, createMonths);
             QueryDictionary.Add(6, createMonths_Bills);
+            QueryDictionary.Add(7, createIncomes);
+            QueryDictionary.Add(8, createMonths_Incomes);
         }
 
         private string createDatabase = @$"CREATE DATABASE FinanceManager ON PRIMARY 
@@ -58,7 +60,7 @@ namespace FinanceManager.Controllers
                                          User_Id INT NOT NULL,
                                          Month DATE NOT NULL,
                                          TotalIncome DECIMAL(16, 2) NOT NULL,
-                                        TotalOutcome DECIMAL(16, 2) NOT NULL,
+                                         TotalOutcome DECIMAL(16, 2) NOT NULL,
                                         )";
 
         private string createMonths_Bills = @"CREATE TABLE Months_Bills
@@ -70,5 +72,23 @@ namespace FinanceManager.Controllers
                                                  Description VARCHAR(120) NOT NULL,
                                                  Value DECIMAL(16, 2) NOT NULL
                                                )";
+
+        private string createIncomes = @"CREATE TABLE Incomes
+                                         (
+                                           Id int identity(1, 1) not null, 
+                                           User_Id int not null, 
+                                           Description varchar(120) not null, 
+                                           Value decimal(16, 2) not null
+                                         )";
+
+        private string createMonths_Incomes = @"CREATE TABLE Months_Incomes
+                                                (
+                                                  Id int identity(1, 1) not null, 
+                                                  User_Id int not null, 
+                                                  Month_Id int not null, 
+                                                  Income_Id int not null, 
+                                                  Description varchar(120) not null,
+                                                  Value decimal(16, 2) not null
+                                                )";
     }
 }
