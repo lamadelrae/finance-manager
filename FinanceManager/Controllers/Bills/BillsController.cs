@@ -23,10 +23,51 @@ namespace FinanceManager.Controllers.Bills
             return View("BillForm");
         }
 
-        public ActionResult AddBill(Models.DataBase.Bills billObj)
+        public ActionResult EditBill(int id)
         {
-            billObj.User_Id = Session.SessionController.GetInstance.Session.UserId;
-            billObj.Value = billObj.Value.ToString().MoneyToDecimal();
+            var dbObj = Repository.GetById(id);
+
+            var billViewModel = new BillViewModel
+            {
+                Id = dbObj.Id.ToString(),
+                Description = dbObj.Description,
+                Value = dbObj.Value.ToString()
+            };
+
+            return View("BillForm", billViewModel);
+        }
+
+        public ActionResult SubmitBill(BillViewModel billViewModel)
+        {
+            if (billViewModel.Id.IsNotNull())
+                return UpdateBill(billViewModel);
+            else
+                return AddBill(billViewModel);
+        }
+
+        private ActionResult UpdateBill(BillViewModel billViewModel)
+        {
+            var billObj = new Models.DataBase.Bills
+            {
+                Id = billViewModel.Id.ToInt(),
+                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                Description = billViewModel.Description,
+                Value = billViewModel.Value.MoneyToDecimal()
+            };
+
+            Repository.Update(billObj);
+
+            return Redirect("Bills");
+        }
+
+        private ActionResult AddBill(BillViewModel billViewModel)
+        {
+            var billObj = new Models.DataBase.Bills
+            {
+                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                Description = billViewModel.Description,
+                Value = billViewModel.Value.MoneyToDecimal()
+            };
 
             Repository.Insert(billObj);
 

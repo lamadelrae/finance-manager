@@ -14,7 +14,7 @@ namespace FinanceManager.Controllers.Login
     public class LoginController : Controller
     {
 
-        public FinanceManagerContext context = new FinanceManagerContext();
+        public DatabaseContext context = new DatabaseContext();
 
         public ActionResult Login()
         {

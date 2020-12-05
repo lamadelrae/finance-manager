@@ -9,7 +9,7 @@ namespace FinanceManager.Controllers
 {
     public class BaseRepository<T> : IRepository<T> where T : class
     {
-        public FinanceManagerContext Context = new FinanceManagerContext();
+        public DatabaseContext Context = new DatabaseContext();
 
         public virtual T GetById(int id)
         {

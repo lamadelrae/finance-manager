@@ -6,7 +6,7 @@ using Microsoft.Data.SqlClient;
 
 namespace FinanceManager.Models.DataBase
 {
-    public class FinanceManagerContext : DbContext
+    public class DatabaseContext : DbContext
     {
         private readonly static string ConfigFile = $@"{AppDomain.CurrentDomain.BaseDirectory}\Config.txt";
 

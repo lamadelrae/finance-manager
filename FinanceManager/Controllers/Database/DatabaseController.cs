@@ -19,7 +19,7 @@ namespace FinanceManager.Controllers
 
         public bool DbNotExists()
         {
-            using (var con = new SqlConnection(FinanceManagerContext.GetServerConnection()))
+            using (var con = new SqlConnection(DatabaseContext.GetServerConnection()))
             {
                 string query = @"SELECT name 
                                  FROM master.dbo.sysdatabases 
@@ -44,12 +44,12 @@ namespace FinanceManager.Controllers
 
         public bool DbIsNotRequiredVersion()
         {
-            return GetDbVersion() != FinanceManagerContext.DbVersion;
+            return GetDbVersion() != DatabaseContext.DbVersion;
         }
 
         public void CreateDatabase()
         {
-            using (var con = new SqlConnection(FinanceManagerContext.GetServerConnection()))
+            using (var con = new SqlConnection(DatabaseContext.GetServerConnection()))
             {
                 con.Open();
                 var query = new DatabaseVersionQueries().QueryDictionary[1];
@@ -57,7 +57,7 @@ namespace FinanceManager.Controllers
                 con.Close();
             }
 
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            using (var con = new SqlConnection(DatabaseContext.GetConnection()))
             {
                 con.Open();
 
@@ -66,7 +66,7 @@ namespace FinanceManager.Controllers
                     new SqlCommand(i.Value, con).ExecuteNonQuery();
                 });
 
-                var insertVersion = $"INSERT INTO DatabaseVersion VALUES ({FinanceManagerContext.DbVersion})";
+                var insertVersion = $"INSERT INTO DatabaseVersion VALUES ({DatabaseContext.DbVersion})";
 
                 new SqlCommand(insertVersion, con).ExecuteNonQuery();
 
@@ -76,7 +76,7 @@ namespace FinanceManager.Controllers
 
         public void UpdateDatabase()
         {
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            using (var con = new SqlConnection(DatabaseContext.GetConnection()))
             {
                 con.Open();
 
@@ -88,7 +88,7 @@ namespace FinanceManager.Controllers
                     new SqlCommand(query.Value, con).ExecuteNonQuery();
                 });
 
-                string updateVersion = $"UPDATE DatabaseVersion SET DbVersion = '{FinanceManagerContext.DbVersion}'";
+                string updateVersion = $"UPDATE DatabaseVersion SET DbVersion = '{DatabaseContext.DbVersion}'";
 
                 new SqlCommand(updateVersion, con).ExecuteNonQuery();
 
@@ -98,7 +98,7 @@ namespace FinanceManager.Controllers
 
         private string GetDbVersion()
         {
-            using (var con = new SqlConnection(FinanceManagerContext.GetConnection()))
+            using (var con = new SqlConnection(DatabaseContext.GetConnection()))
             {
                 string query = @"SELECT * FROM DatabaseVersion";
 

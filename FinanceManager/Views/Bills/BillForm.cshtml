@@ -1,7 +1,8 @@
-﻿@model FinanceManager.Models.ViewModels.BillsViewModel
+﻿@model FinanceManager.Models.ViewModels.BillViewModel
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
-        <form action="/Bills/AddBill" method="post">
+        <form action="/Bills/SubmitBill" method="post">
+            @Html.HiddenFor(m => m.Id)
             <div class="form-group">
                 <label>Description</label>
                 @Html.TextBoxFor(m => m.Description, new { Class = "form-control", Type = "text", Required = true })
