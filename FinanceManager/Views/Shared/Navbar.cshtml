@@ -16,7 +16,7 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/dfe2e43d7c.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="~/Content/simple-sidebar.css" type="text/css">
+    <link rel="stylesheet" href="~/ViewCore/simple-sidebar.css" asp-append-version="true" type="text/css">
 
     <!--MDB-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
@@ -32,17 +32,17 @@
 
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
-                <a href="\Home\Home" class="list-group-item list-group-item-action bg-light"><i class="fa fa-chart-bar"></i>&nbsp;Home</a>
-                <a href="\Bills\Bills" class="list-group-item list-group-item-action bg-light"><i class="fas fa-user-plus"></i>&nbsp;Bills</a>
-                <a href="\Incomes\Incomes" class="list-group-item list-group-item-action bg-light"><i class="fas fa-cart-plus"></i>&nbsp;Incomes</a>
-                <a href="\Months\Months" class="list-group-item list-group-item-action bg-light"><i class="far fa-clipboard"></i>&nbsp;Months</a>
+                <a href="\Home\Home" class="list-group-item list-group-item-action bg-light"><i class="fas fa-home"></i>&nbsp;Home</a>
+                <a href="\Bills\Bills" class="list-group-item list-group-item-action bg-light"><i class="fas fa-file-invoice"></i>&nbsp;Bills</a>
+                <a href="\Incomes\Incomes" class="list-group-item list-group-item-action bg-light"><i class="fas fa-file-invoice-dollar"></i>&nbsp;Incomes</a>
+                <a href="\Months\Months" class="list-group-item list-group-item-action bg-light"><i class="fas fa-chart-line"></i>&nbsp;Months</a>
                 <a href="\Settings\Settings" class="list-group-item list-group-item-action bg-light"><i class="fas fa-cogs"></i>&nbsp;Settings</a>
             </div>
         </div>
 
         <div id="page-content-wrapper">
             <nav class="navbar navbar-light bg-light border-bottom">
-                <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-arrow-left"></i> Fechar Menu</button>
+                <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-arrow-left"></i>Close Menu</button>
 
                 <div class="float-right">
                     <i class="fas fa-user"></i> @FinanceManager.Controllers.Session.SessionController.GetInstance.Session.Username

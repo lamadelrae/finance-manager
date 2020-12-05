@@ -26,7 +26,7 @@ namespace FinanceManager.Controllers.Months
             {
                 ViewBag.Messahe = ex.Message;
 
-                return View("Months", new List<MonthsViewModel>());
+                return View("Months", new List<MonthsViewModel>()); 
             }
         }
 
