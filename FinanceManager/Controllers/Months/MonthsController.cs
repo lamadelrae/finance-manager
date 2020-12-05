@@ -8,6 +8,7 @@ using FinanceManager.Models.ViewModels;
 using FinanceManager.Utilities.Extensions;
 using FinanceManager.Utilities.DataAnnotations;
 using System.Linq.Expressions;
+using FinanceManager.Models;
 
 namespace FinanceManager.Controllers.Months
 {
@@ -32,7 +33,7 @@ namespace FinanceManager.Controllers.Months
 
         public ActionResult EditMonth(int monthId)
         {
-            return View("MonthsForm", GetMonthObj(monthId));
+            return View("MonthsForm", GetMonthViewModel(monthId));
         }
 
         public ActionResult AddBillToMonth(Months_BillsViewModel billObj)
@@ -77,28 +78,22 @@ namespace FinanceManager.Controllers.Months
             }
         }
 
-        private MonthsFormViewModel GetMonthObj(int monthId)
+        private MonthsFormViewModel GetMonthViewModel(int monthId)
         {
-            return Repository.GetById(monthId).Map(i => new MonthsFormViewModel
-            {
-                Id = i.Id,
-                TotalIncome = i.TotalIncome,
-                TotalOutcome = i.TotalOutcome,
-                Months_Bills = Repository.Context.Months_Bills.Select(i => new Months_BillsViewModel
-                {
-                    Id = i.Id,
-                    MonthId = i.Month_Id,
-                    Description = i.Description,
-                    Value = i.Value.ToString()
-                }).ToList(),
-                Months_Incomes = Repository.Context.Months_Incomes.Select(i => new Months_IncomesViewModel
-                {
-                    Id = i.Id,
-                    MonthId = i.Month_Id,
-                    Description = i.Description,
-                    Value = i.Value.ToString()
-                }).ToList()
+            return GetMonthObj(monthId).Map(i => new MonthsFormViewModel
+            { 
+
             });
+        }
+
+        private MonthModel GetMonthObj(int monthId)
+        {
+            return new MonthModel
+            {
+                Month = Repository.GetById(monthId),
+                Months_Bills = Repository.Context.Months_Bills.Where(i => i.Month_Id == monthId).ToList(),
+                Months_Incomes = Repository.Context.Months_Incomes.Where(i => i.Month_Id == monthId).ToList()
+            };
         }
 
         private List<MonthsViewModel> GetAllMonths()

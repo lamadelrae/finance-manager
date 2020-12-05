@@ -22,9 +22,15 @@ namespace FinanceManager.Models.ViewModels
     {
         public int Id { get; set; }
 
-        public decimal TotalIncome { get; set; }
+        public string Month { get; set; }
 
-        public decimal TotalOutcome { get; set; }
+        public string TotalIncome { get; set; }
+
+        public string TotalOutcome { get; set; }
+
+        public string TotalProfit { get; set; }
+
+        public string Salary { get; set; }
 
         public bool SalaryIsManualInput { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿@model FinanceManager.Models.ViewModels.MonthsFormViewModel
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <h4>Id: @Model.Id; Month: @Model.Month</h4>
     <div class="container">
         <form action="/Incomes/SubmitIncome" method="post">
             @Html.HiddenFor(m => m.Id)

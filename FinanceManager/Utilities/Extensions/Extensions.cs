@@ -48,7 +48,6 @@ namespace FinanceManager.Utilities.Extensions
 
         public static K Map<T, K>(this T inputObj, Func<T, K> func)
         { 
-            //K is the output obj
             return func(inputObj);
         }
     }

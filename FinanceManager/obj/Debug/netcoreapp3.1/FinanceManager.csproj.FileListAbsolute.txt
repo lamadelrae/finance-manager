@@ -767,3 +767,4 @@ C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\ne
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Incomes\Incomes.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Settings.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Incomes\IncomeForm.cshtml.g.cs
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\MonthsForm.cshtml.g.cs
