@@ -17,4 +17,41 @@ namespace FinanceManager.Models.ViewModels
 
         public string TotalOutcome { get; set; }
     }
+
+    public class MonthsFormViewModel
+    {
+        public int Id { get; set; }
+
+        public decimal TotalIncome { get; set; }
+
+        public decimal TotalOutcome { get; set; }
+
+        public bool SalaryIsManualInput { get; set; }
+
+        public List<Months_BillsViewModel> Months_Bills { get; set; } = new List<Months_BillsViewModel>();
+
+        public List<Months_IncomesViewModel> Months_Incomes { get; set; } = new List<Months_IncomesViewModel>();
+    }
+
+    public class Months_BillsViewModel
+    {
+        public int Id { get; set; }
+
+        public int MonthId { get; set; }
+
+        public string Description { get; set; }
+
+        public string Value { get; set; }
+    }
+
+    public class Months_IncomesViewModel
+    {
+        public int Id { get; set; }
+
+        public int MonthId { get; set; }
+
+        public string Description { get; set; }
+
+        public string Value { get; set; }
+    }
 }
