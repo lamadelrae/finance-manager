@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -37,6 +38,10 @@ namespace FinanceManager.Models.ViewModels
         public List<Months_BillsViewModel> Months_Bills { get; set; } = new List<Months_BillsViewModel>();
 
         public List<Months_IncomesViewModel> Months_Incomes { get; set; } = new List<Months_IncomesViewModel>();
+
+        public List<SelectListItem> Months_BillsDropDown { get; set; }
+
+        public List<SelectListItem> Months_IncomesDropDown { get; set; }
     }
 
     public class Months_BillsViewModel

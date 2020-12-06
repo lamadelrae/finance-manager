@@ -16,31 +16,13 @@
     </div>
 
     <div class="col">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Value</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @foreach (var bill in Model.Months_Bills)
-                {
-                    <tr>
-                        <th scope="row">@bill.Id</th>
-                        <td>@bill.Description</td>
-                        <td>@bill.Value</td>
-                        <td><a href="/Months/RemoveBillFromMonth/?billId=@bill.Id" class="btn btn-primary">Remove</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-
-    <div class="col">
+        <h3>Incomes</h3>
+        <form class="form-inline">
+            @Html.DropDownList("incomes", Model.Months_IncomesDropDown, new { Class = "form-control" })
+            &nbsp;
+            <a class="btn btn-primary">Add</a>
+        </form>
+        <br>
         <table class="table">
             <thead>
                 <tr>
@@ -64,13 +46,45 @@
             </tbody>
         </table>
     </div>
+
+    <div class="col">
+        <h3>Bills</h3>
+        <form class="form-inline">
+            @Html.DropDownList("bills", Model.Months_BillsDropDown, new { Class = "form-control" })
+            &nbsp;
+            <a class="btn btn-primary">Add</a>
+        </form>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var bill in Model.Months_Bills)
+                {
+                    <tr>
+                        <th scope="row">@bill.Id</th>
+                        <td>@bill.Description</td>
+                        <td>@bill.Value</td>
+                        <td><a href="/Months/RemoveBillFromMonth/?incomeId=@bill.Id" class="btn btn-primary">Remove</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
     <div class="form-inline col">
         <label>Total Income</label>
         @Html.TextBoxFor(m => m.TotalIncome, new { Class = "form-control", Disabled = true })
-
+        <br><br>
         <label>Total Outcome</label>
         @Html.TextBoxFor(m => m.TotalOutcome, new { Class = "form-control", Disabled = true })
-
+        <br><br>
         <label>Total Profit</label>
         @Html.TextBoxFor(m => m.TotalProfit, new { Class = "form-control", Disabled = true })
     </div>

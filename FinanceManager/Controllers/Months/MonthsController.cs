@@ -9,6 +9,7 @@ using FinanceManager.Utilities.Extensions;
 using FinanceManager.Utilities.DataAnnotations;
 using System.Linq.Expressions;
 using FinanceManager.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FinanceManager.Controllers.Months
 {
@@ -102,6 +103,16 @@ namespace FinanceManager.Controllers.Months
                     MonthId = i.Month_Id,
                     Description = i.Description,
                     Value = i.Value.ToString()
+                }).ToList(),
+                Months_BillsDropDown = Repository.Context.Bills.ToList().Select(i => new SelectListItem 
+                {
+                    Text = i.Description,
+                    Value = i.Id.ToString()
+                }).ToList(),
+                Months_IncomesDropDown = Repository.Context.Incomes.ToList().Select(i => new SelectListItem 
+                {
+                    Text = i.Description,
+                    Value = i.Id.ToString()
                 }).ToList()
             });
         }
