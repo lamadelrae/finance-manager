@@ -6,7 +6,7 @@ using FinanceManager.Utilities.Extensions;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Controllers.Session;
 using System;
-using FinanceManager.Models.Exeptions;
+using FinanceManager.Models.Exceptions;
 using System.Threading.Tasks;
 
 namespace FinanceManager.Controllers.Login
