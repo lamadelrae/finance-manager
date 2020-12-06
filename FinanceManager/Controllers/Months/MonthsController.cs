@@ -81,8 +81,28 @@ namespace FinanceManager.Controllers.Months
         private MonthsFormViewModel GetMonthViewModel(int monthId)
         {
             return GetMonthObj(monthId).Map(i => new MonthsFormViewModel
-            { 
-
+            {
+                Id = i.Month.Id,
+                Month = i.Month.Month.ToString("MM/yyyy"),
+                Salary = i.Month.Salary.ToString(),
+                SalaryIsManualInput = i.Month.SalaryIsManualInput,
+                TotalIncome = i.Month.TotalIncome.ToString(),
+                TotalOutcome = i.Month.TotalOutcome.ToString(),
+                TotalProfit = i.Month.TotalProfit.ToString(),
+                Months_Bills = i.Months_Bills.Select(i => new Months_BillsViewModel
+                {
+                    Id = i.Id,
+                    MonthId = i.Month_Id,
+                    Description = i.Description,
+                    Value = i.Value.ToString()
+                }).ToList(),
+                Months_Incomes = i.Months_Incomes.Select(i => new Months_IncomesViewModel
+                {
+                    Id = i.Id,
+                    MonthId = i.Month_Id,
+                    Description = i.Description,
+                    Value = i.Value.ToString()
+                }).ToList()
             });
         }
 

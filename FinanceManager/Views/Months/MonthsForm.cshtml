@@ -1,19 +1,78 @@
 ﻿@model FinanceManager.Models.ViewModels.MonthsFormViewModel
-<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-    <h4>Id: @Model.Id; Month: @Model.Month</h4>
-    <div class="container">
-        <form action="/Incomes/SubmitIncome" method="post">
-            @Html.HiddenFor(m => m.Id)
-            <div class="form-group">
-                <label>Income</label>
-                @Html.TextBoxFor(m => m.TotalIncome, new { Class = "form-control", Type = "text", Required = true })
-            </div>
-            <div class="form-group">
-                <label>Outcome</label>
-                @Html.TextBoxFor(m => m.TotalOutcome, new { Class = "form-control", Required = true })
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="row container">
+    <div class="col">
+        <h4>Id: @Model.Id; Month: @Model.Month</h4>
+        <div class="container">
+            <form action="/Incomes/SubmitIncome" method="post">
+                @Html.HiddenFor(m => m.Id)
+                <div class="form-group">
+                    <label>Salary</label>
+                    @Html.TextBoxFor(m => m.Salary, new { Class = "form-control", Type = "text", Required = true, Disabled = Model.SalaryIsManualInput != true })
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var bill in Model.Months_Bills)
+                {
+                    <tr>
+                        <th scope="row">@bill.Id</th>
+                        <td>@bill.Description</td>
+                        <td>@bill.Value</td>
+                        <td><a href="/Months/RemoveBillFromMonth/?billId=@bill.Id" class="btn btn-primary">Remove</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var income in Model.Months_Incomes)
+                {
+                    <tr>
+                        <th scope="row">@income.Id</th>
+                        <td>@income.Description</td>
+                        <td>@income.Value</td>
+                        <td><a href="/Months/RemoveIncomeFromMonth/?incomeId=@income.Id" class="btn btn-primary">Remove</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="form-inline col">
+        <label>Total Income</label>
+        @Html.TextBoxFor(m => m.TotalIncome, new { Class = "form-control", Disabled = true })
+
+        <label>Total Outcome</label>
+        @Html.TextBoxFor(m => m.TotalOutcome, new { Class = "form-control", Disabled = true })
+
+        <label>Total Profit</label>
+        @Html.TextBoxFor(m => m.TotalProfit, new { Class = "form-control", Disabled = true })
     </div>
 </div>
 

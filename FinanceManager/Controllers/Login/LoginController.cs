@@ -13,7 +13,6 @@ namespace FinanceManager.Controllers.Login
 {
     public class LoginController : Controller
     {
-
         public DatabaseContext context = new DatabaseContext();
 
         public ActionResult Login()
@@ -122,7 +121,10 @@ namespace FinanceManager.Controllers.Login
                     User_Id = userId,
                     Month = Convert.ToDateTime($"{DateTime.Now.Year}-{i}-01"),
                     TotalIncome = 0,
-                    TotalOutcome = 0
+                    TotalOutcome = 0,
+                    TotalProfit = 0,
+                    Salary = 0,
+                    SalaryIsManualInput = false
                 });
             }
 

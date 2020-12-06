@@ -15,6 +15,10 @@ namespace FinanceManager.Models.DataBase
 
         public DateTime Month { get; set; }
 
+        public decimal Salary { get; set; }
+
+        public bool SalaryIsManualInput { get; set; }
+
         public decimal TotalIncome { get; set; }
 
         public decimal TotalOutcome { get; set; }
