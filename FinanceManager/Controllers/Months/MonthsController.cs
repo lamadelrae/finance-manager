@@ -37,32 +37,73 @@ namespace FinanceManager.Controllers.Months
             return View("MonthsForm", GetMonthViewModel(monthId));
         }
 
-        public ActionResult AddBillToMonth(Months_BillsViewModel billObj)
+        public ActionResult AddBillToMonth(int monthId, int billId)
         {
+            var dbObj = Repository.Context.Bills.Find(billId);
+
             Repository.Context.Months_Bills.Add(new Months_Bills
             {
-                Bill_Id = billObj.Id.IsNotNull(out int result) ? result : 0,
+                Bill_Id = dbObj.Id.IsNotNull(out int result) ? result : 0,
                 User_Id = Session.SessionController.GetInstance.Session.UserId,
-                Month_Id = billObj.MonthId,
-                Description = billObj.Description,
-                Value = billObj.Value.MoneyToDecimal()
+                Month_Id = monthId,
+                Description = dbObj.Description,
+                Value = dbObj.Value.ToString().MoneyToDecimal()
             });
 
-            return Redirect($"MonthsForm?monthId={billObj.MonthId}");
+            Repository.Context.SaveChanges();
+
+            CalculateMonth(monthId);
+
+            return Redirect($"EditMonth?monthId={monthId}");
         }
 
-        public ActionResult AddIncomeToMonth(Months_IncomesViewModel incomeObj)
+        public ActionResult AddIncomeToMonth(int monthId, int incomeId)
         {
+            var dbObj = Repository.Context.Incomes.Find(incomeId);
+
             Repository.Context.Months_Incomes.Add(new Months_Incomes
             {
-                Income_Id = incomeObj.Id.IsNotNull(out int result) ? result : 0,
+                Income_Id = dbObj.Id.IsNotNull(out int result) ? result : 0,
                 User_Id = Session.SessionController.GetInstance.Session.UserId,
-                Month_Id = incomeObj.MonthId,
-                Description = incomeObj.Description,
-                Value = incomeObj.Value.MoneyToDecimal()
+                Month_Id = monthId,
+                Description = dbObj.Description,
+                Value = dbObj.Value.ToString().MoneyToDecimal()
             });
 
-            return Redirect($"MonthsForm?monthId={incomeObj.MonthId}");
+            var monthObj = Repository.GetById(monthId);
+
+            Repository.Context.SaveChanges();
+
+            CalculateMonth(monthId);
+
+            return Redirect($"EditMonth?monthId={monthId}");
+        }
+
+        public ActionResult RemoveIncomeFromMonth(int id)
+        {
+            var obj = Repository.Context.Months_Incomes.Find(id);
+
+            Repository.Context.Months_Incomes.Remove(obj);
+
+            Repository.Context.SaveChanges();
+
+            CalculateMonth(obj.Month_Id);
+
+            return Redirect($"EditMonth?monthId={obj.Month_Id}");
+        }
+
+        public ActionResult RemoveBillFromMonth(int id)
+        {
+            var obj = Repository.Context.Months_Bills.Find(id);
+
+            Repository.Context.Months_Bills.Remove(obj);
+
+            Repository.Context.SaveChanges();
+
+
+            CalculateMonth(obj.Month_Id);
+
+            return Redirect($"EditMonth?monthId={obj.Month_Id}");
         }
 
         public ActionResult Search(DateTime initialDate, DateTime finalDate)
@@ -77,6 +118,31 @@ namespace FinanceManager.Controllers.Months
 
                 return View("Months", new List<MonthsViewModel>());
             }
+        }
+
+        private void CalculateMonth(int monthId)
+        {
+            var dbObj = GetMonthObj(monthId);
+
+            var calcObj = new CalcModel();
+
+            calcObj.TotalIncome += dbObj.Month.Salary;
+
+            Parallel.ForEach(dbObj.Months_Incomes, i => 
+            {
+                calcObj.TotalIncome += i.Value;
+            });
+
+            Parallel.ForEach(dbObj.Months_Bills, i => 
+            {
+                calcObj.TotalOutcome += i.Value;
+            });
+
+            dbObj.Month.TotalIncome = calcObj.TotalIncome;
+            dbObj.Month.TotalOutcome = calcObj.TotalOutcome;
+            dbObj.Month.TotalProfit = calcObj.TotalProfit;
+
+            Repository.Context.SaveChanges();
         }
 
         private MonthsFormViewModel GetMonthViewModel(int monthId)

@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Months\\MonthsForm.cshtml",
+      "TargetPath": "Views\\Months\\MonthsForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Bills\\Bills.cshtml",
       "TargetPath": "Views\\Bills\\Bills.cshtml",
       "FileKind": "mvc"
@@ -14432,8 +14437,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Incomes\\Incomes.cshtml",
+      "TargetPath": "Views\\Incomes\\Incomes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Settings\\Settings.cshtml",
+      "TargetPath": "Views\\Settings\\Settings.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Months\\Months.cshtml",
       "TargetPath": "Views\\Months\\Months.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\Views\\Incomes\\IncomeForm.cshtml",
+      "TargetPath": "Views\\Incomes\\IncomeForm.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -9,8 +9,6 @@ namespace FinanceManager.Models.Exceptions
     {
         public FirstAccessException(string message)
             : base(message)
-        {
-
-        }
+        { }
     }
 }

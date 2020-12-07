@@ -1,6 +1,15 @@
 ﻿@model FinanceManager.Models.ViewModels.MonthsFormViewModel
 
-<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="row container">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row container">
     <div class="col">
         <h4>Id: @Model.Id; Month: @Model.Month</h4>
         <div class="container">
@@ -17,10 +26,12 @@
 
     <div class="col">
         <h3>Incomes</h3>
-        <form class="form-inline">
-            @Html.DropDownList("incomes", Model.Months_IncomesDropDown, new { Class = "form-control" })
+        <form class="form-inline" action="/Months/AddIncomeToMonth" method="post">
+            <input hidden id="monthId" name="monthId" value="@Model.Id">
+
+            @Html.DropDownList("incomeId", Model.Months_IncomesDropDown, new { Class = "form-control" })
             &nbsp;
-            <a class="btn btn-primary">Add</a>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
         <br>
         <table class="table">
@@ -40,7 +51,7 @@
                         <th scope="row">@income.Id</th>
                         <td>@income.Description</td>
                         <td>@income.Value</td>
-                        <td><a href="/Months/RemoveIncomeFromMonth/?incomeId=@income.Id" class="btn btn-primary">Remove</a></td>
+                        <td><a href="/Months/RemoveIncomeFromMonth?id=@income.Id" class="btn btn-primary">Remove</a></td>
                     </tr>
                 }
             </tbody>
@@ -49,10 +60,13 @@
 
     <div class="col">
         <h3>Bills</h3>
-        <form class="form-inline">
-            @Html.DropDownList("bills", Model.Months_BillsDropDown, new { Class = "form-control" })
+        <form class="form-inline" action="/Months/AddBillToMonth" method="post">
+
+            <input hidden id="monthId" name="monthId" value="@Model.Id">
+
+            @Html.DropDownList("billId", Model.Months_BillsDropDown, new { Class = "form-control" })
             &nbsp;
-            <a class="btn btn-primary">Add</a>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
         <br>
         <table class="table">
@@ -72,22 +86,21 @@
                         <th scope="row">@bill.Id</th>
                         <td>@bill.Description</td>
                         <td>@bill.Value</td>
-                        <td><a href="/Months/RemoveBillFromMonth/?incomeId=@bill.Id" class="btn btn-primary">Remove</a></td>
+                        <td><a href="/Months/RemoveBillFromMonth?id=@bill.Id" class="btn btn-primary">Remove</a></td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-    <div class="form-inline col">
+    <div class="col">
         <label>Total Income</label>
         @Html.TextBoxFor(m => m.TotalIncome, new { Class = "form-control", Disabled = true })
-        <br><br>
         <label>Total Outcome</label>
         @Html.TextBoxFor(m => m.TotalOutcome, new { Class = "form-control", Disabled = true })
-        <br><br>
         <label>Total Profit</label>
         @Html.TextBoxFor(m => m.TotalProfit, new { Class = "form-control", Disabled = true })
     </div>
+
 </div>
 
 <script>
