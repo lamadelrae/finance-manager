@@ -46,8 +46,8 @@ namespace FinanceManager.Controllers.Login
 
                 if (IsLoginOk(loginObj, userObj))
                 {
-                    if (LastYearIsNotThisYear())
-                        InsertMonths(userObj.Id);
+                    if (LastYearIsNotThisYear(userObj.Id))
+                        InsertMonths(userObj.Id, userObj);
 
                     SessionController.GetInstance.SetSession(userObj);
 
@@ -100,9 +100,9 @@ namespace FinanceManager.Controllers.Login
             }
         }
 
-        public bool LastYearIsNotThisYear()
+        public bool LastYearIsNotThisYear(int userId)
         {
-            var lastMonth = context.Months.ToList();
+            var lastMonth = context.Months.Where(i => i.User_Id == userId).ToList();
 
             if (lastMonth.Count == 0)
                 return true;
@@ -112,7 +112,7 @@ namespace FinanceManager.Controllers.Login
                     .Month.Year < DateTime.Now.Year;
         }
 
-        public void InsertMonths(int userId)
+        public void InsertMonths(int userId, Users userObj)
         {
             for (int i = 1; i <= 12; i++)
             {
@@ -123,7 +123,7 @@ namespace FinanceManager.Controllers.Login
                     TotalIncome = 0,
                     TotalOutcome = 0,
                     TotalProfit = 0,
-                    Salary = 0,
+                    Salary = userObj.Salary,
                     SalaryIsManualInput = false
                 });
             }

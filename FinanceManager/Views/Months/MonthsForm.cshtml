@@ -31,7 +31,7 @@
 
             @Html.DropDownList("incomeId", Model.Months_IncomesDropDown, new { Class = "form-control" })
             &nbsp;
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i></button>
         </form>
         <br>
         <table class="table">
@@ -51,7 +51,7 @@
                         <th scope="row">@income.Id</th>
                         <td>@income.Description</td>
                         <td>@income.Value</td>
-                        <td><a href="/Months/RemoveIncomeFromMonth?id=@income.Id" class="btn btn-primary">Remove</a></td>
+                        <td><a href="/Months/RemoveIncomeFromMonth?id=@income.Id" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 }
             </tbody>
@@ -66,7 +66,7 @@
 
             @Html.DropDownList("billId", Model.Months_BillsDropDown, new { Class = "form-control" })
             &nbsp;
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i></button>
         </form>
         <br>
         <table class="table">
@@ -86,7 +86,7 @@
                         <th scope="row">@bill.Id</th>
                         <td>@bill.Description</td>
                         <td>@bill.Value</td>
-                        <td><a href="/Months/RemoveBillFromMonth?id=@bill.Id" class="btn btn-primary">Remove</a></td>
+                        <td><a href="/Months/RemoveBillFromMonth?id=@bill.Id" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 }
             </tbody>

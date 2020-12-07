@@ -70,8 +70,6 @@ namespace FinanceManager.Controllers.Months
                 Value = dbObj.Value.ToString().MoneyToDecimal()
             });
 
-            var monthObj = Repository.GetById(monthId);
-
             Repository.Context.SaveChanges();
 
             CalculateMonth(monthId);
