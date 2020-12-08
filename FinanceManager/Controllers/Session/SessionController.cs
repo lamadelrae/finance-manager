@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinanceManager.Controllers.Session
 {
-    public class SessionController
+    public sealed class SessionController
     {
         SessionController()
         { }
