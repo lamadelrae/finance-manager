@@ -41,13 +41,13 @@ namespace FinanceManager.Utilities.Extensions
 
         public static decimal MoneyToDecimal(this string input)
         {
-            input = input.Replace(",", string.Empty);
+            input = input.Contains(",") ? input.Replace(",", string.Empty) : input;
 
             return Convert.ToDecimal(input);
         }
 
         public static K Map<T, K>(this T inputObj, Func<T, K> func)
-        { 
+        {
             return func(inputObj);
         }
     }

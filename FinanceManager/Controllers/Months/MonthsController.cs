@@ -37,6 +37,21 @@ namespace FinanceManager.Controllers.Months
             return View("MonthsForm", GetMonthViewModel(monthId));
         }
 
+        public ActionResult SaveSalary(int monthId, bool salaryIsManualInput, string salary)
+        {
+            var dbObj = Repository.GetById(monthId);
+
+            dbObj.SalaryIsManualInput = salaryIsManualInput;
+
+            if (salary.IsNotNull())
+                dbObj.Salary = salary.MoneyToDecimal();
+
+            Repository.Context.SaveChanges();
+            CalculateMonth(monthId);
+
+            return Redirect($"EditMonth?monthId={monthId}");
+        }
+
         public ActionResult AddBillToMonth(int monthId, int billId)
         {
             var dbObj = Repository.Context.Bills.Find(billId);
@@ -126,12 +141,12 @@ namespace FinanceManager.Controllers.Months
 
             calcObj.TotalIncome += dbObj.Month.Salary;
 
-            Parallel.ForEach(dbObj.Months_Incomes, i => 
+            Parallel.ForEach(dbObj.Months_Incomes, i =>
             {
                 calcObj.TotalIncome += i.Value;
             });
 
-            Parallel.ForEach(dbObj.Months_Bills, i => 
+            Parallel.ForEach(dbObj.Months_Bills, i =>
             {
                 calcObj.TotalOutcome += i.Value;
             });
@@ -168,12 +183,12 @@ namespace FinanceManager.Controllers.Months
                     Description = i.Description,
                     Value = i.Value.ToString()
                 }).ToList(),
-                Months_BillsDropDown = Repository.Context.Bills.ToList().Select(i => new SelectListItem 
+                Months_BillsDropDown = Repository.Context.Bills.ToList().Select(i => new SelectListItem
                 {
                     Text = i.Description,
                     Value = i.Id.ToString()
                 }).ToList(),
-                Months_IncomesDropDown = Repository.Context.Incomes.ToList().Select(i => new SelectListItem 
+                Months_IncomesDropDown = Repository.Context.Incomes.ToList().Select(i => new SelectListItem
                 {
                     Text = i.Description,
                     Value = i.Id.ToString()

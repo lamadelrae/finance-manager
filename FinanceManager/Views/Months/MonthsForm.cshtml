@@ -13,11 +13,20 @@
     <div class="col">
         <h4>Id: @Model.Id; Month: @Model.Month</h4>
         <div class="container">
-            <form action="/Incomes/SubmitIncome" method="post">
-                @Html.HiddenFor(m => m.Id)
+            <form action="/Months/SaveSalary">
+                <input hidden id="monthId" name="monthId" value="@Model.Id">
+
+                @Html.CheckBoxFor(m => m.SalaryIsManualInput) Salary is Manual Input
+
                 <div class="form-group">
                     <label>Salary</label>
-                    @Html.TextBoxFor(m => m.Salary, new { Class = "form-control", Type = "text", Required = true, Disabled = Model.SalaryIsManualInput != true })
+
+                    @{ 
+                        var helper = Model.SalaryIsManualInput ? (object)new { Class = "form-control", Type = "Text", Required = true }
+                         : new { Class = "form-control", Type = "Text", Required = true, Disabled = true};
+                    }
+
+                    @Html.TextBoxFor(m => m.Salary, helper)
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -104,6 +113,7 @@
 </div>
 
 <script>
+    $("#Salary").maskMoney();
     $("#TotalIncome").maskMoney();
     $("#TotalOutcome").maskMoney();
 </script>

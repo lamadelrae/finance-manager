@@ -735,7 +735,6 @@ C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\ne
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csprojAssemblyReference.cache
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.AssemblyInfoInputs.cache
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.AssemblyInfo.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csproj.CoreCompileInputs.cache
