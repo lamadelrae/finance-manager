@@ -10,6 +10,9 @@ namespace FinanceManager.Controllers.Session
 {
     public class SessionController
     {
+        SessionController()
+        { }
+
         public SessionModel Session { get; private set; }
 
         private static SessionController Instance = null;
