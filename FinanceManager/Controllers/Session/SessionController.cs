@@ -10,8 +10,7 @@ namespace FinanceManager.Controllers.Session
 {
     public sealed class SessionController
     {
-        SessionController()
-        { }
+        SessionController(){ }
 
         public SessionModel Session { get; private set; }
 
