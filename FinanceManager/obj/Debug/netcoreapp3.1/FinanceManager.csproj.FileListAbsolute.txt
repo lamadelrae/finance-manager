@@ -360,7 +360,6 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.TagHelpers.input.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.TagHelpers.output.cache
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.RazorCoreGenerate.cache
-C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Database\Database.cshtml.g.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Login\RegisterUser.cshtml.g.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\DefaultLayout.cshtml.g.cs
@@ -380,7 +379,6 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Matthew\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Bills\Bills.cshtml.g.cs
-C:\Users\Matthew\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\Bills.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -768,3 +766,9 @@ C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\ne
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Incomes\IncomeForm.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\MonthsForm.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csprojAssemblyReference.cache
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Bills\BillForm.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Incomes\IncomeForm.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Incomes\Incomes.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\Months.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\MonthsForm.cshtml.g.cs
+C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Settings.cshtml.g.cs

@@ -43,7 +43,7 @@ namespace FinanceManager.Controllers.Months
 
             dbObj.SalaryIsManualInput = salaryIsManualInput;
 
-            if (salary.IsNotNull())
+            if (salary.IsNotNull() && salaryIsManualInput)
                 dbObj.Salary = salary.MoneyToDecimal();
 
             Repository.Context.SaveChanges();

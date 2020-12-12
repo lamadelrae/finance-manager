@@ -130,5 +130,12 @@ namespace FinanceManager.Controllers.Login
 
             context.SaveChanges();
         }
+
+        public ActionResult LogOut()
+        {
+            SessionController.GetInstance.DestroyInstance();
+
+            return Redirect("/Login/Login");
+        }
     }
 }

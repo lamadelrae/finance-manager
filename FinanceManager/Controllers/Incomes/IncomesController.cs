@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinanceManager.Models.ViewModels;
+using FinanceManager.Utilities.DataAnnotations;
 using FinanceManager.Utilities.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceManager.Controllers
 {
+    [SessionValidation]
     public class IncomesController : Controller
     {
         BaseRepository<Models.DataBase.Incomes> Repository = new BaseRepository<Models.DataBase.Incomes>();

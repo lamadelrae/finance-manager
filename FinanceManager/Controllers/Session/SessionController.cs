@@ -32,8 +32,14 @@ namespace FinanceManager.Controllers.Session
             if (Session.IsNull())
                 Session = new SessionModel();
 
-            Session.Username = userObj.Username;
             Session.UserId = userObj.Id;
+            Session.Username = userObj.Username;
+        }
+        
+        public void DestroyInstance()
+        {
+            Session = null;
+            Instance = null;
         }
     }
 }
