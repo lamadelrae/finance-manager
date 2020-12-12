@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {}
+    "C:\\Users\\Matthew\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {
+    "C:\\Users\\Matthew\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+        "projectUniqueName": "C:\\Users\\Matthew\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
         "projectName": "FinanceManager",
-        "projectPath": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
-        "packagesPath": "C:\\Users\\Matthew Almeida\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\obj\\",
+        "projectPath": "C:\\Users\\Matthew\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+        "packagesPath": "C:\\Users\\Matthew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matthew\\Source\\Repos\\FinanceManager\\FinanceManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Matthew Almeida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Matthew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
