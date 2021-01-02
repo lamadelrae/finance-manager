@@ -46,9 +46,9 @@ namespace FinanceManager.Controllers
                 return AddIncome(incomeViewModel);
         }
 
-        public ActionResult InactivateIncome(string incomeId)
+        public ActionResult InactivateIncome(string id)
         {
-            var incomeObj = Repository.GetById(incomeId.ToInt());
+            var incomeObj = Repository.GetById(id.ToInt());
             incomeObj.Status = "I";
 
             Repository.Context.SaveChanges();

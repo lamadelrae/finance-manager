@@ -3,7 +3,8 @@
     <div class="container">
         @if (string.IsNullOrEmpty(Model.Id) != true)
         {
-            <form action="/Bills/InactivateBill?billId=@Model.Id">
+            <form action="/Bills/InactivateBill" method="post">
+                @Html.HiddenFor(m => m.Id)
                 <button type="submit" class="btn btn-danger"><i class="fas fa-folder-minus"></i></button> Inactivate
             </form>
         }

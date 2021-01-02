@@ -47,9 +47,9 @@ namespace FinanceManager.Controllers.Bills
                 return AddBill(billViewModel);
         }
 
-        public ActionResult InactivateBill(string billId)
+        public ActionResult InactivateBill(string id)
         {
-            var billObj = Repository.GetById(billId.ToInt());
+            var billObj = Repository.GetById(id.ToInt());
             billObj.Status = "I";
 
             Repository.Context.SaveChanges();
