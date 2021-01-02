@@ -51,7 +51,8 @@ namespace FinanceManager.Controllers
                                                  Id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
                                                  User_Id INT NOT NULL,
                                                  Description VARCHAR(120) NOT NULL,
-                                                 Value DECIMAL(16, 2) NOT NULL
+                                                 Value DECIMAL(16, 2) NOT NULL, 
+												 Status CHAR(1) NOT NULL
                                                )";
 
         private string createMonths = @"CREATE TABLE Months
@@ -81,7 +82,8 @@ namespace FinanceManager.Controllers
                                            Id int identity(1, 1) primary key not null, 
                                            User_Id int not null, 
                                            Description varchar(120) not null, 
-                                           Value decimal(16, 2) not null
+                                           Value decimal(16, 2) not null, 
+										   Status char(1) not null
                                          )";
 
         private string createMonths_Incomes = @"CREATE TABLE Months_Incomes

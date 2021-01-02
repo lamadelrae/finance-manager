@@ -14,5 +14,7 @@ namespace FinanceManager.Models.DataBase
         public string Description { get; set; }
 
         public decimal Value { get; set; }
+
+        public string Status { get; set; }
     }
 }

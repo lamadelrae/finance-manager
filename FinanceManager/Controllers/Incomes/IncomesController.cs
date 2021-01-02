@@ -21,7 +21,7 @@ namespace FinanceManager.Controllers
 
         public ActionResult NewIncome()
         {
-            return View("IncomeForm");
+            return View("IncomeForm", new IncomeFormViewModel());
         }
 
         public ActionResult EditIncome(int id)
@@ -46,6 +46,16 @@ namespace FinanceManager.Controllers
                 return AddIncome(incomeViewModel);
         }
 
+        public ActionResult InactivateIncome(string incomeId)
+        {
+            var incomeObj = Repository.GetById(incomeId.ToInt());
+            incomeObj.Status = "I";
+
+            Repository.Context.SaveChanges();
+
+            return Redirect("Incomes");
+        }
+
         private ActionResult UpdateIncome(IncomeFormViewModel incomeViewModel)
         {
             var incomeObj = new Models.DataBase.Incomes
@@ -53,7 +63,8 @@ namespace FinanceManager.Controllers
                 Id = incomeViewModel.Id.ToInt(),
                 User_Id = Session.SessionController.GetInstance.Session.UserId,
                 Description = incomeViewModel.Description,
-                Value = incomeViewModel.Value.MoneyToDecimal()
+                Value = incomeViewModel.Value.MoneyToDecimal(),
+                Status = "A"
             };
 
             Repository.Update(incomeObj);
@@ -67,7 +78,8 @@ namespace FinanceManager.Controllers
             {
                 User_Id = Session.SessionController.GetInstance.Session.UserId,
                 Description = incomeViewModel.Description,
-                Value = incomeViewModel.Value.MoneyToDecimal()
+                Value = incomeViewModel.Value.MoneyToDecimal(),
+                Status = "A"
             };
 
             Repository.Insert(incomeObj);
@@ -77,7 +89,7 @@ namespace FinanceManager.Controllers
 
         private List<IncomesViewModel> GetIncomes()
         {
-            return Repository.GetAll().Select(i => new IncomesViewModel
+            return Repository.Context.Incomes.Where(k => k.Status == "A").ToList().Select(i => new IncomesViewModel
             {
                 Id = i.Id.ToString(),
                 Username = Repository.Context.Users.Find(i.User_Id).Username,

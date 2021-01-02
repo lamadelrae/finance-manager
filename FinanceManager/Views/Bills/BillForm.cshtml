@@ -1,6 +1,12 @@
 ﻿@model FinanceManager.Models.ViewModels.BillFormViewModel
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
+        @if (string.IsNullOrEmpty(Model.Id) != true)
+        {
+            <form action="/Bills/InactivateBill?billId=@Model.Id">
+                <button type="submit" class="btn btn-danger"><i class="fas fa-folder-minus"></i></button> Inactivate
+            </form>
+        }
         <form action="/Bills/SubmitBill" method="post">
             @Html.HiddenFor(m => m.Id)
             <div class="form-group">

@@ -47,7 +47,7 @@ namespace FinanceManager.Controllers.Login
                 if (IsLoginOk(loginObj, userObj))
                 {
                     if (LastYearIsNotThisYear(userObj.Id))
-                        InsertMonths(userObj.Id, userObj);
+                        InsertMonths(userObj);
 
                     SessionController.GetInstance.SetSession(userObj);
 
@@ -112,13 +112,13 @@ namespace FinanceManager.Controllers.Login
                     .Month.Year < DateTime.Now.Year;
         }
 
-        public void InsertMonths(int userId, Users userObj)
+        public void InsertMonths(Users userObj)
         {
             for (int i = 1; i <= 12; i++)
             {
                 context.Months.Add(new Models.DataBase.Months
                 {
-                    User_Id = userId,
+                    User_Id = userObj.Id,
                     Month = Convert.ToDateTime($"{DateTime.Now.Year}-{i}-01"),
                     TotalIncome = 0,
                     TotalOutcome = 0,
