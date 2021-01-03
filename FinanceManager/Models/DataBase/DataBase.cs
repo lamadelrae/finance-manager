@@ -10,7 +10,7 @@ namespace FinanceManager.Models.DataBase
     {
         private readonly static string ConfigFile = $@"{AppDomain.CurrentDomain.BaseDirectory}\Config.txt";
 
-        public static string DbVersion { get; private set; } = "8";
+        public static string DbVersion { get; private set; } = "10";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

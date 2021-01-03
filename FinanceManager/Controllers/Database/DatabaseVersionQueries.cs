@@ -9,7 +9,6 @@ namespace FinanceManager.Controllers
     {
         public Dictionary<int, string> QueryDictionary = new Dictionary<int, string>();
 
-
         public DatabaseVersionQueries()
         {
             QueryDictionary.Add(1, createDatabase);
@@ -20,6 +19,8 @@ namespace FinanceManager.Controllers
             QueryDictionary.Add(6, createMonths_Bills);
             QueryDictionary.Add(7, createIncomes);
             QueryDictionary.Add(8, createMonths_Incomes);
+            QueryDictionary.Add(9, createSavings);
+            QueryDictionary.Add(10, createSavings_Transactions);
         }
 
         private string createDatabase = @$"CREATE DATABASE FinanceManager ON PRIMARY 
@@ -29,7 +30,7 @@ namespace FinanceManager.Controllers
                                                 LOG ON (NAME = FinanceManager_Log, 
                                                 FILENAME = '{AppDomain.CurrentDomain.BaseDirectory}\FinanceManager_Log.ldf', 
                                                 SIZE = 1MB, 
-                                                MAXSIZE = 5MB, 
+                                                MAXSIZE = 10MB, 
                                                 FILEGROWTH = 10%)";
 
         private string createUsers = @" CREATE TABLE Users
@@ -95,5 +96,26 @@ namespace FinanceManager.Controllers
                                                   Description varchar(120) not null,
                                                   Value decimal(16, 2) not null
                                                 )";
+        private string createSavings = @"CREATE TABLE Savings 
+                                         (
+                                            Id INT IDENTITY (1, 1) PRIMARY KEY, 
+                                            User_Id INT,
+                                            Description VARCHAR(1200),
+                                            TotalAmount DECIMAL(16, 2),
+                                            DateCreated DATETIME,
+                                            LastModifiedDate DATETIME
+                                         )";
+
+        private string createSavings_Transactions = @"CREATE TABLE Savings_Transactions
+                                                      (
+                                                        Id INT IDENTITY (1, 1) PRIMARY KEY,
+                                                        User_Id INT, 
+                                                        Savings_Id INT, 
+                                                        Description VARCHAR(1200),
+                                                        Type CHAR(1), 
+                                                        Value DECIMAL(16, 2),
+                                                        TransactionDate DATETIME,
+                                                        InputDate DATETIME
+                                                      )";
     }
 }
