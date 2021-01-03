@@ -183,12 +183,12 @@ namespace FinanceManager.Controllers.Months
                     Description = i.Description,
                     Value = i.Value.ToString()
                 }).ToList(),
-                Months_BillsDropDown = Repository.Context.Bills.ToList().Select(i => new SelectListItem
+                Months_BillsDropDown = Repository.Context.Bills.Where(i => i.Status == "A").ToList().Select(i => new SelectListItem
                 {
                     Text = i.Description,
                     Value = i.Id.ToString()
                 }).ToList(),
-                Months_IncomesDropDown = Repository.Context.Incomes.ToList().Select(i => new SelectListItem
+                Months_IncomesDropDown = Repository.Context.Incomes.Where(i => i.Status == "A").ToList().Select(i => new SelectListItem
                 {
                     Text = i.Description,
                     Value = i.Id.ToString()
