@@ -26,10 +26,7 @@ namespace FinanceManager.Controllers.Savings
         {
             List<SavingsViewModel> savingsList = new List<SavingsViewModel>();
 
-            BaseRepository.Context.Savings
-                .Where(k => k.User_Id == Session.SessionController.GetInstance.Session.UserId)
-                .AsParallel()
-                .ForAll(i =>
+            BaseRepository.Context.Savings.Where(k => k.User_Id == Session.SessionController.GetInstance.Session.UserId).AsParallel().ForAll(i =>
             {
                 Savings_Transactions lastTransaction = BaseRepository.Context.Savings_Transactions
                 .Where(k => k.Savings_Id == i.Id)
