@@ -31,6 +31,10 @@ namespace FinanceManager.Models.DataBase
 
         public DbSet<Months_Incomes> Months_Incomes { get; set; }
 
+        public DbSet<Savings> Savings { get; set; }
+
+        public DbSet<Savings_Transactions> Savings_Transactions { get; set; }
+
         public static string GetServerConnection()
         {
             try

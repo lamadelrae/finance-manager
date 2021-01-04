@@ -772,3 +772,4 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\Months.cshtml.g.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Months\MonthsForm.cshtml.g.cs
 C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Settings.cshtml.g.cs
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Savings\Savings.cshtml.g.cs

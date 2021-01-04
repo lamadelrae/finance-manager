@@ -99,23 +99,23 @@ namespace FinanceManager.Controllers
         private string createSavings = @"CREATE TABLE Savings 
                                          (
                                             Id INT IDENTITY (1, 1) PRIMARY KEY, 
-                                            User_Id INT,
-                                            Description VARCHAR(1200),
-                                            TotalAmount DECIMAL(16, 2),
-                                            DateCreated DATETIME,
-                                            LastModifiedDate DATETIME
+                                            User_Id INT NOT NULL,
+                                            Description VARCHAR(1200) NOT NULL,
+                                            TotalAmount DECIMAL(16, 2) NOT NULL,
+                                            DateCreated DATETIME NOT NULL,
+                                            LastModifiedDate DATETIME NOT NULL
                                          )";
 
         private string createSavings_Transactions = @"CREATE TABLE Savings_Transactions
                                                       (
                                                         Id INT IDENTITY (1, 1) PRIMARY KEY,
-                                                        User_Id INT, 
-                                                        Savings_Id INT, 
-                                                        Description VARCHAR(1200),
-                                                        Type CHAR(1), 
-                                                        Value DECIMAL(16, 2),
-                                                        TransactionDate DATETIME,
-                                                        InputDate DATETIME
-                                                      )";
+                                                        User_Id INT NOT NULL, 
+                                                        Savings_Id INT NOT NULL, 
+                                                        Description VARCHAR(1200) NOT NULL,
+                                                        Type CHAR(1) NOT NULL, 
+                                                        Value DECIMAL(16, 2) NOT NULL,
+                                                        TransactionDate DATETIME NOT NULL,
+                                                        InputDate DATETIME NOT NULL
+														)";
     }
 }
