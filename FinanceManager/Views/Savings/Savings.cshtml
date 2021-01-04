@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<FinanceManager.Models.ViewModels.SavingsViewModel>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <a href="/Savings/NewSavings" class="btn btn-success"><i class="fas fa-folder-plus"></i>&nbsp; Savings</a>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Last Transaction</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var saving in Model)
+                {
+                    <tr>
+                        <td>@saving.Description</td>
+                        <td>@saving.TotalAmount</td>
+                        <td>@saving.LastTransaction</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

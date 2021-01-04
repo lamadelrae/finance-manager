@@ -113,7 +113,6 @@ namespace FinanceManager.Controllers.Months
 
             Repository.Context.SaveChanges();
 
-
             CalculateMonth(obj.Month_Id);
 
             return Redirect($"EditMonth?monthId={obj.Month_Id}");
