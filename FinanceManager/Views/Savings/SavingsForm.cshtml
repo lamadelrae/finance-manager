@@ -1,7 +1,19 @@
-﻿
-@{
-    ViewData["Title"] = "SavingsForm";
-}
+﻿@model FinanceManager.Models.ViewModels.SavingsFormViewModel
+<h1>New Savings</h1>
 
-<h1>SavingsForm</h1>
+<div class="container">
+    <form>
+        <div class="form-group form-inline">
+            
+            @Html.HiddenFor(m => m.Id, new { Class = "form-control" })
 
+            @Html.TextBoxFor(m => m.Description, new { Class = "form-control"})
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script>
+    $("#Salary").maskMoney();
+</script>

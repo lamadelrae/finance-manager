@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FinanceManager.Models.DataBase;
 using FinanceManager.Models.ViewModels;
+using FinanceManager.Controllers.Session;
+using FinanceManager.Utilities.Extensions;
 
 namespace FinanceManager.Controllers.Savings
 {
@@ -19,27 +21,78 @@ namespace FinanceManager.Controllers.Savings
 
         public ActionResult NewSavings()
         {
-            return View("SavingsForm");
+            return View("SavingsForm", new SavingsFormViewModel());
+        }
+
+        public ActionResult EditSavings(int id)
+        {
+            return View("SavingsForm", GetSavingsObj(BaseRepository.GetById(id)));
+        }
+
+        public ActionResult SubmitSavings(SavingsFormViewModel viewModelObj)
+        {
+            if (viewModelObj.Id.IsNotNull())
+                return AddSavings(viewModelObj);
+            else
+                return UpdateSavings(viewModelObj);
+        }
+
+        private ActionResult AddSavings(SavingsFormViewModel viewModelObj)
+        {
+            BaseRepository.Insert(new Models.DataBase.Savings
+            {
+                User_Id = SessionController.GetInstance.Session.UserId,
+                Description = viewModelObj.Description,
+                DateCreated = DateTime.Now,
+                LastModifiedDate = DateTime.Now
+            });
+
+            return Redirect("Savings");
+        }
+
+        private ActionResult UpdateSavings(SavingsFormViewModel viewModelObj)
+        {
+            var savingsObj = BaseRepository.GetById(viewModelObj.Id.ToInt());
+            savingsObj.Description = viewModelObj.Description;
+            savingsObj.LastModifiedDate = DateTime.Now;
+
+            return Redirect("Savings");
+        }
+
+        private SavingsFormViewModel GetSavingsObj(Models.DataBase.Savings savingsObj)
+        {
+            return savingsObj.Map(i => new SavingsFormViewModel 
+            {
+                Id = i.Id.ToString(),
+                Description = i.Description,
+                Transactions = BaseRepository.Context.Savings_Transactions.Select(k => new SavingsFormTransactionViewModel 
+                {
+                    Id = k.Id.ToString(),
+                    Description = k.Description,
+                    Value = k.Description
+                }).ToList()
+            });
         }
 
         private List<SavingsViewModel> GetSavings()
         {
             List<SavingsViewModel> savingsList = new List<SavingsViewModel>();
 
-            BaseRepository.Context.Savings.Where(k => k.User_Id == Session.SessionController.GetInstance.Session.UserId).AsParallel().ForAll(i =>
+            var savings = BaseRepository.Context.Savings
+                .Where(i => i.User_Id == SessionController.GetInstance.Session.UserId).ToList();
+
+            foreach (var saving in savings)
             {
-                Savings_Transactions lastTransaction = BaseRepository.Context.Savings_Transactions
-                .Where(k => k.Savings_Id == i.Id)
-                .ToList()
-                .LastOrDefault();
+                var lastTransaction = BaseRepository.Context.Savings_Transactions
+                    .Where(i => i.Savings_Id == saving.Id).ToList().LastOrDefault();
 
                 savingsList.Add(new SavingsViewModel
                 {
-                    Description = i.Description,
-                    LastTransaction = $"{lastTransaction.Description}|{lastTransaction.InputDate}",
-                    TotalAmount = i.TotalAmount.ToString()
+                    Description = saving.Description,
+                    TotalAmount = saving.TotalAmount.ToString(),
+                    LastTransaction = lastTransaction.IsNull() ? "No transaction Found." : $"{lastTransaction.Description} || {lastTransaction.InputDate}"
                 });
-            });
+            }
 
             return savingsList;
         }

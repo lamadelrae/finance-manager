@@ -50,5 +50,10 @@ namespace FinanceManager.Utilities.Extensions
         {
             return func(inputObj);
         }
+
+        public static DateTime ToDateTime(this object obj)
+        {
+            return Convert.ToDateTime(obj);
+        }
     }
 }

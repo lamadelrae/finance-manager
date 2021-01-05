@@ -13,4 +13,26 @@ namespace FinanceManager.Models.ViewModels
 
         public string LastTransaction { get; set; }
     }
+
+    public class SavingsFormViewModel
+    {
+        public string Id { get; set; }
+
+        public string Description { get; set; }
+
+        public List<SavingsFormTransactionViewModel> Transactions { get; set; } = new List<SavingsFormTransactionViewModel>();
+    }
+
+    public class SavingsFormTransactionViewModel
+    {
+        public string Id { get; set; }
+
+        public string Description { get; set; }
+
+        public string Type { get; set; }
+
+        public string Value { get; set; }
+
+        public string InputDate { get; set; }
+    }
 }
