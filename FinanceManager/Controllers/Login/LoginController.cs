@@ -13,7 +13,7 @@ namespace FinanceManager.Controllers.Login
 {
     public class LoginController : Controller
     {
-        public DatabaseContext context = new DatabaseContext();
+        public DatabaseContext Context = new DatabaseContext();
 
         public ActionResult Login()
         {
@@ -39,10 +39,10 @@ namespace FinanceManager.Controllers.Login
                 if (db.DbIsNotRequiredVersion())
                     db.UpdateDatabase();
 
-                if (context.Users.ToList().Count() == 0)
+                if (Context.Users.ToList().Count() == 0)
                     throw new FirstAccessException("No users in DataBase, please register.");
 
-                var userObj = context.Users.Where(i => i.Username == loginObj.Username).FirstOrDefault();
+                var userObj = Context.Users.Where(i => i.Username == loginObj.Username).FirstOrDefault();
 
                 if (IsLoginOk(loginObj, userObj))
                 {
@@ -78,7 +78,7 @@ namespace FinanceManager.Controllers.Login
         {
             try
             {
-                context.Users.Add(new Users
+                Context.Users.Add(new Users
                 {
                     Username = registerObj.Username,
                     Password = registerObj.Password.Trim().ToSha256(),
@@ -86,7 +86,7 @@ namespace FinanceManager.Controllers.Login
                     MaxExpenses = registerObj.MaxExpenses.MoneyToDecimal()
                 });
 
-                context.SaveChanges();
+                Context.SaveChanges();
 
                 ViewBag.IsFirstAccess = false;
 
@@ -102,7 +102,7 @@ namespace FinanceManager.Controllers.Login
 
         public bool LastYearIsNotThisYear(int userId)
         {
-            var lastMonth = context.Months.Where(i => i.User_Id == userId).ToList();
+            var lastMonth = Context.Months.Where(i => i.User_Id == userId).ToList();
 
             if (lastMonth.Count == 0)
                 return true;
@@ -116,7 +116,7 @@ namespace FinanceManager.Controllers.Login
         {
             for (int i = 1; i <= 12; i++)
             {
-                context.Months.Add(new Models.DataBase.Months
+                Context.Months.Add(new Models.DataBase.Months
                 {
                     User_Id = userObj.Id,
                     Month = Convert.ToDateTime($"{DateTime.Now.Year}-{i}-01"),
@@ -128,7 +128,7 @@ namespace FinanceManager.Controllers.Login
                 });
             }
 
-            context.SaveChanges();
+            Context.SaveChanges();
         }
 
         public ActionResult LogOut()
