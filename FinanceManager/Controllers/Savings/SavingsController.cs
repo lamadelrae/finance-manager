@@ -7,6 +7,7 @@ using FinanceManager.Models.DataBase;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Controllers.Session;
 using FinanceManager.Utilities.Extensions;
+using FinanceManager.Models;
 
 namespace FinanceManager.Controllers.Savings
 {
@@ -32,9 +33,51 @@ namespace FinanceManager.Controllers.Savings
         public ActionResult SubmitSavings(SavingsFormViewModel viewModelObj)
         {
             if (viewModelObj.Id.IsNotNull())
-                return AddSavings(viewModelObj);
-            else
                 return UpdateSavings(viewModelObj);
+            else
+                return AddSavings(viewModelObj);
+        }
+
+        public ActionResult AddTransaction(SavingsFormViewModel savingsObj)
+        {
+            BaseRepository.Context.Savings_Transactions.Add(new Savings_Transactions
+            {
+                Savings_Id = savingsObj.Id.ToInt(),
+                User_Id = SessionController.GetInstance.Session.UserId,
+                Description = savingsObj.TransactionForm.Description,
+                InputDate = savingsObj.TransactionForm.InputDate.ToDateTime(),
+                TransactionDate = DateTime.Now,
+                Type = savingsObj.TransactionForm.Type,
+                Value = savingsObj.TransactionForm.Value.MoneyToDecimal()
+            });
+
+            BaseRepository.Context.SaveChanges();
+
+            CalculateSavings(savingsObj.Id.ToInt());
+
+            return Redirect($"EditSavings?id={savingsObj.Id}");
+        }
+
+        private void CalculateSavings(int savingsId)
+        {
+            List<Savings_Transactions> savingsList = BaseRepository.Context.Savings_Transactions
+                .Where(i => i.Savings_Id == savingsId)
+                .ToList();
+
+            CalcModel calcObj = new CalcModel();
+
+            foreach (var transaction in savingsList)
+            {
+                if (transaction.Type == "I")
+                    calcObj.TotalIncome += transaction.Value;
+                else
+                    calcObj.TotalOutcome += transaction.Value;
+            }
+
+            Models.DataBase.Savings savingsObj = BaseRepository.GetById(savingsId);
+            savingsObj.TotalAmount = calcObj.TotalProfit;
+
+            BaseRepository.Context.SaveChanges();
         }
 
         private ActionResult AddSavings(SavingsFormViewModel viewModelObj)
@@ -56,21 +99,26 @@ namespace FinanceManager.Controllers.Savings
             savingsObj.Description = viewModelObj.Description;
             savingsObj.LastModifiedDate = DateTime.Now;
 
+            BaseRepository.Context.SaveChanges();
+
             return Redirect("Savings");
         }
 
         private SavingsFormViewModel GetSavingsObj(Models.DataBase.Savings savingsObj)
         {
-            return savingsObj.Map(i => new SavingsFormViewModel 
+            return savingsObj.Map(i => new SavingsFormViewModel
             {
                 Id = i.Id.ToString(),
                 Description = i.Description,
-                Transactions = BaseRepository.Context.Savings_Transactions.Select(k => new SavingsFormTransactionViewModel 
+                Transactions = BaseRepository.Context.Savings_Transactions.Where(u => u.Savings_Id == i.Id).Select(k => new TransactionsViewModel
                 {
                     Id = k.Id.ToString(),
                     Description = k.Description,
-                    Value = k.Description
-                }).ToList()
+                    Type = k.Type,
+                    Value = k.Value.ToString("C3"),
+                    InputDate = k.InputDate.ToString("dd/MM/yyyy")
+                }).ToList(),
+                TotalAmount = savingsObj.TotalAmount.ToString("C3")
             });
         }
 
@@ -88,6 +136,7 @@ namespace FinanceManager.Controllers.Savings
 
                 savingsList.Add(new SavingsViewModel
                 {
+                    Id = saving.Id.ToString(),
                     Description = saving.Description,
                     TotalAmount = saving.TotalAmount.ToString(),
                     LastTransaction = lastTransaction.IsNull() ? "No transaction Found." : $"{lastTransaction.Description} || {lastTransaction.InputDate}"

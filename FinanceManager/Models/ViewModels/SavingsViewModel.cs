@@ -7,6 +7,8 @@ namespace FinanceManager.Models.ViewModels
 {
     public class SavingsViewModel
     {
+        public string Id { get; set; }
+
         public string Description { get; set; }
 
         public string TotalAmount { get; set; }
@@ -20,10 +22,25 @@ namespace FinanceManager.Models.ViewModels
 
         public string Description { get; set; }
 
-        public List<SavingsFormTransactionViewModel> Transactions { get; set; } = new List<SavingsFormTransactionViewModel>();
+        public string TotalAmount { get; set; }
+
+        public TransactionsFormViewModel TransactionForm { get; set; }
+
+        public List<TransactionsViewModel> Transactions { get; set; } = new List<TransactionsViewModel>();
     }
 
-    public class SavingsFormTransactionViewModel
+    public class TransactionsFormViewModel
+    { 
+        public string Description { get; set; }
+
+        public string Type { get; set; }
+
+        public string Value { get; set; }
+
+        public string InputDate { get; set; }
+    }
+
+    public class TransactionsViewModel
     {
         public string Id { get; set; }
 

@@ -1,19 +1,98 @@
 ﻿@model FinanceManager.Models.ViewModels.SavingsFormViewModel
-<h1>New Savings</h1>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
-    <form>
+    <form action="/Savings/SubmitSavings" method="post">
         <div class="form-group form-inline">
-            
             @Html.HiddenFor(m => m.Id, new { Class = "form-control" })
-
-            @Html.TextBoxFor(m => m.Description, new { Class = "form-control"})
+            &nbsp;
+            <label>Description</label>
+            &nbsp;
+            @Html.TextBoxFor(m => m.Description, new { Class = "form-control", PlaceHolder = "Description" })
+            &nbsp;
+            <label>Total Amount</label>
+            &nbsp;
+            @Html.TextBoxFor(m => m.TotalAmount, new { Class = "form-control", Disabled = true })
+            &nbsp;
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    @if (Model.Id != null)
+    {
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            New Transaction
+        </button>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">New Transaction</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/Savings/AddTransaction" method="post">
+                            @Html.HiddenFor(m => m.Id, new { Class = "form-control" })
+                            <br>
+                            @Html.TextBoxFor(m => m.TransactionForm.Description, new { Class = "form-control", PlaceHolder = "Description", Required = true })
+                            <br>
+                            <label>Type Of Transaction</label>
+                            <select class="form-control" id="TransactionForm_Type" name="TransactionForm.Type" required>
+                                <option value="I">Income</option>
+                                <option value="O">Outcome</option>
+                            </select>
+                            <br>
+                            @Html.TextBoxFor(m => m.TransactionForm.Value, new { Class = "form-control", PlaceHolder = "Value", Required = true })
+                            <br>
+                            @Html.TextBoxFor(m => m.TransactionForm.InputDate, new { Class = "form-control", Type = "Date", Required = true })
+                            <br>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Value</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in Model.Transactions)
+            {
+                <tr>
+                    <td>@transaction.Description</td>
+                    @if (transaction.Type == "I")
+                    {
+                        <td><i style="color:#00b300" class="fas fa-arrow-up"></i></td>
+                    }
+                    else
+                    {
+                        <td><i style="color: #b30000" class="fas fa-arrow-down"></i></td>
+                    }
+                    <td>@transaction.Value</td>
+                    <td>@transaction.InputDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 
 <script>
-    $("#Salary").maskMoney();
+    $("#TransactionForm_Value").maskMoney();
 </script>
