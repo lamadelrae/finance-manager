@@ -44,7 +44,7 @@ namespace FinanceManager.Controllers.Login
 
                 var userObj = Context.Users.Where(i => i.Username == loginObj.Username).FirstOrDefault();
 
-                if (IsLoginOk(loginObj, userObj))
+                if (LoginIsOk(loginObj, userObj))
                 {
                     if (LastYearIsNotThisYear(userObj.Id))
                         InsertMonths(userObj);
@@ -66,7 +66,7 @@ namespace FinanceManager.Controllers.Login
             }
         }
 
-        private bool IsLoginOk(LoginViewModel loginObj, Users userObj)
+        private bool LoginIsOk(LoginViewModel loginObj, Users userObj)
         {
             if (userObj.IsNull())
                 throw new Exception("User not found.");
