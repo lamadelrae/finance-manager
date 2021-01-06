@@ -8,9 +8,11 @@ using FinanceManager.Models.ViewModels;
 using FinanceManager.Controllers.Session;
 using FinanceManager.Utilities.Extensions;
 using FinanceManager.Models;
+using FinanceManager.Utilities.DataAnnotations;
 
 namespace FinanceManager.Controllers.Savings
 {
+    [SessionValidation]
     public class SavingsController : Controller
     {
         BaseRepository<Models.DataBase.Savings> BaseRepository = new BaseRepository<Models.DataBase.Savings>();
