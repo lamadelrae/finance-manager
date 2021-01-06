@@ -20,7 +20,7 @@ namespace FinanceManager.Utilities.Extensions
                 StringBuilder builder = new StringBuilder();
 
                 foreach (var b in bytes)
-                    builder.Append(bytes[b].ToString("x2"));
+                    builder.Append(b.ToString("x2"));
                 
                 return builder.ToString();
             }
