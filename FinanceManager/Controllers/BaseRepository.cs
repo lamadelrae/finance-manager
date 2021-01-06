@@ -27,13 +27,13 @@ namespace FinanceManager.Controllers
             Context.SaveChanges();
         }
 
-        public void Update(T item)
+        public virtual void Update(T item)
         {
             Context.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             Context.SaveChanges();
         }
 
-        public void Delete(T item)
+        public virtual void Delete(T item)
         {
             Context.Remove(item);
             Context.SaveChanges();
