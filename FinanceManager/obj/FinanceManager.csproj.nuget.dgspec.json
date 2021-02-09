@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matthew.almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {}
+    "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matthew.almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {
+    "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matthew.almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+        "projectUniqueName": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
         "projectName": "FinanceManager",
-        "projectPath": "C:\\Users\\matthew.almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
-        "packagesPath": "C:\\Users\\matthew.almeida\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matthew.almeida\\source\\repos\\FinanceManager\\FinanceManager\\obj\\",
+        "projectPath": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+        "packagesPath": "C:\\Users\\Matthew Almeida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\matthew.almeida\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Matthew Almeida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -75,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

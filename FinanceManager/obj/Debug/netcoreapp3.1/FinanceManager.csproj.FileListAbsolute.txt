@@ -381,7 +381,6 @@ C:\Users\Matthew\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp
 C:\Users\Matthew\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Bills\Bills.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\FinanceManager.exe
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\FinanceManager.deps.json
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\FinanceManager.runtimeconfig.json
@@ -1204,3 +1203,47 @@ C:\Users\matthew.almeida\source\repos\FinanceManager\FinanceManager\bin\Debug\ne
 C:\Users\matthew.almeida\source\repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\matthew.almeida\source\repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\matthew.almeida\source\repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Savings\SavingsForm.cshtml.g.cs
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Savings\SavingsForm.cshtml.g.cs
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\scopedcss\bundle\FinanceManager.styles.css
