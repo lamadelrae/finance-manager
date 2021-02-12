@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FinanceManager.Models.DataBase
+namespace FinanceManager.Domain.DataBase.Months.Incomes
 {
     public class Incomes
     {

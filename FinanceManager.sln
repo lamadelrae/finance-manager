@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Domain", "01 - Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Domain", "FinanceManager.Domain\FinanceManager.Domain.csproj", "{9F7C2A51-2E16-4AA0-8BA2-1216C19D99CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02- Infra", "02- Infra", "{C40D90C2-4B16-4CD9-A382-188232BF147F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Infra", "02 - Infra", "{C40D90C2-4B16-4CD9-A382-188232BF147F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Infra.CrossCutting", "FinanceManager.Infra.CrossCutting\FinanceManager.Infra.CrossCutting.csproj", "{466E09C2-1D21-4518-91DF-E70A14CD1FD6}"
 EndProject
@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Api", "Finan
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Presentation", "05 - Presentation", "{1B12D12E-8542-493A-91AE-61C38A53CA2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManaget.Presentation", "FinanceManaget.Presentation\FinanceManaget.Presentation.csproj", "{664794A7-C87D-44D4-8FD1-295FD2F0E319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManaget.Presentation", "FinanceManaget.Presentation\FinanceManaget.Presentation.csproj", "{664794A7-C87D-44D4-8FD1-295FD2F0E319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

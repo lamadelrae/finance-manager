@@ -8,4 +8,10 @@
     <Folder Include="Database\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceManager.Domain\FinanceManager.Domain.csproj" />
+    <ProjectReference Include="..\FinanceManager.Infra.CrossCutting\FinanceManager.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\FinanceManager.Infra.Data\FinanceManager.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

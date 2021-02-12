@@ -8638,11 +8638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+      "projectUniqueName": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
       "projectName": "FinanceManager",
-      "projectPath": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
+      "projectPath": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\FinanceManager.csproj",
       "packagesPath": "C:\\Users\\Matthew Almeida\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matthew Almeida\\source\\repos\\FinanceManager\\FinanceManager\\obj\\",
+      "outputPath": "C:\\Users\\Matthew Almeida\\Source\\Repos\\FinanceManager\\FinanceManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -8710,7 +8710,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
