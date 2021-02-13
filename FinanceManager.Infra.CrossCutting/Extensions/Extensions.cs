@@ -49,6 +49,23 @@ namespace FinanceManager.Infra.Crosscutting.Extenstions
             return func(inputObj);
         }
 
+        public static List<K> MapToList<T, K>(this List<T> objList, Func<T, K> func)
+        {
+            List<K> outputList = new List<K>();
+
+            objList.ForEach(i => outputList.Add(func(i)));
+
+            return outputList;
+        }
+
+        public static T Then<T>(this bool value, T result) => value ? result : default;
+
+        public static void Then(this bool value, Action action)
+        {
+            if (value)
+                action();
+        }
+
         public static DateTime ToDateTime(this object obj)
         {
             return Convert.ToDateTime(obj);

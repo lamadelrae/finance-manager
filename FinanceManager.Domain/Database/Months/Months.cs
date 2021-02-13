@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FinanceManager.Domain.DataBase.Months
+namespace FinanceManager.Domain.Database.Months
 {
     public class Months
     {

@@ -1,12 +1,13 @@
 ﻿using FinanceManager.Domain.Database.Savings;
-using FinanceManager.Domain.DataBase;
-using FinanceManager.Domain.DataBase.Months;
-using FinanceManager.Domain.DataBase.Months.Bills;
-using FinanceManager.Domain.DataBase.Months.Incomes;
+using FinanceManager.Domain.Database;
+using FinanceManager.Domain.Database.Months;
+using FinanceManager.Domain.Database.Months.Bills;
+using FinanceManager.Domain.Database.Months.Incomes;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FinanceManager.Domain.Database.Users;
 
 namespace FinanceManager.Infra.Data.Database
 {

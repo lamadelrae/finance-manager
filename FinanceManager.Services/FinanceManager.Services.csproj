@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Database\" />
+    <Folder Include="DTO\Months\" />
+    <Folder Include="DTO\Savings\" />
   </ItemGroup>
 
   <ItemGroup>
