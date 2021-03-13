@@ -49,7 +49,7 @@ namespace FinanceManager.Controllers.Login
                     if (LastYearIsNotThisYear(userObj.Id))
                         InsertMonths(userObj);
 
-                    SessionController.GetInstance.SetSession(userObj);
+                    WebHelpers.SetSession(userObj);
 
                     return Redirect("/Home/Home");
                 }
@@ -133,7 +133,7 @@ namespace FinanceManager.Controllers.Login
 
         public ActionResult LogOut()
         {
-            SessionController.GetInstance.DestroyInstance();
+            WebHelpers.DestorySession();
 
             return Redirect("/Login/Login");
         }

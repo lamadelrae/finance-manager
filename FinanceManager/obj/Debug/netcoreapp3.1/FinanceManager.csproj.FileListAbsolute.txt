@@ -1246,3 +1246,4 @@ C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\ne
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\Razor\Views\Savings\SavingsForm.cshtml.g.cs
 C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\scopedcss\bundle\FinanceManager.styles.css
+C:\Users\Matthew Almeida\Source\Repos\FinanceManager\FinanceManager\obj\Debug\netcoreapp3.1\FinanceManager.csprojAssemblyReference.cache

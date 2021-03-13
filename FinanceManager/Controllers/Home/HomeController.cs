@@ -22,7 +22,7 @@ namespace FinanceManager.Controllers
 
         private HomeViewModel GetViewModel()
         {
-            var sessionObj = SessionController.GetInstance.Session;
+            var sessionObj = WebHelpers.GetSession();
 
             var billsPaid = Context.Months_Bills.Where(i => i.User_Id == sessionObj.UserId).ToList();
             var incomesPaid = Context.Months_Incomes.Where(i => i.User_Id == sessionObj.UserId).ToList();

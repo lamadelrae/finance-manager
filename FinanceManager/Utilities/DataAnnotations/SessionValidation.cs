@@ -15,7 +15,7 @@ namespace FinanceManager.Utilities.DataAnnotations
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (SessionController.GetInstance.Session.IsNull())
+            if (WebHelpers.GetSession().IsNull())
                 filterContext.Result = new RedirectResult("/");
         }
     }

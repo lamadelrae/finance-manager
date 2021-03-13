@@ -45,7 +45,7 @@ namespace FinanceManager.Controllers.Savings
             BaseRepository.Context.Savings_Transactions.Add(new Savings_Transactions
             {
                 Savings_Id = savingsObj.Id.ToInt(),
-                User_Id = SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = savingsObj.TransactionForm.Description,
                 InputDate = savingsObj.TransactionForm.InputDate.ToDateTime(),
                 TransactionDate = DateTime.Now,
@@ -86,7 +86,7 @@ namespace FinanceManager.Controllers.Savings
         {
             BaseRepository.Insert(new Models.DataBase.Savings
             {
-                User_Id = SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = viewModelObj.Description,
                 DateCreated = DateTime.Now,
                 LastModifiedDate = DateTime.Now
@@ -129,7 +129,7 @@ namespace FinanceManager.Controllers.Savings
             List<SavingsViewModel> savingsList = new List<SavingsViewModel>();
 
             var savings = BaseRepository.Context.Savings
-                .Where(i => i.User_Id == SessionController.GetInstance.Session.UserId).ToList();
+                .Where(i => i.User_Id == WebHelpers.GetSession().UserId).ToList();
 
             foreach (var saving in savings)
             {

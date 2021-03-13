@@ -10,6 +10,7 @@ using FinanceManager.Utilities.DataAnnotations;
 using System.Linq.Expressions;
 using FinanceManager.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using FinanceManager.Controllers.Session;
 
 namespace FinanceManager.Controllers.Months
 {
@@ -59,7 +60,7 @@ namespace FinanceManager.Controllers.Months
             Repository.Context.Months_Bills.Add(new Months_Bills
             {
                 Bill_Id = dbObj.Id.IsNotNull(out int result) ? result : 0,
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Month_Id = monthId,
                 Description = dbObj.Description,
                 Value = dbObj.Value.ToString().MoneyToDecimal()
@@ -79,7 +80,7 @@ namespace FinanceManager.Controllers.Months
             Repository.Context.Months_Incomes.Add(new Months_Incomes
             {
                 Income_Id = dbObj.Id.IsNotNull(out int result) ? result : 0,
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Month_Id = monthId,
                 Description = dbObj.Description,
                 Value = dbObj.Value.ToString().MoneyToDecimal()

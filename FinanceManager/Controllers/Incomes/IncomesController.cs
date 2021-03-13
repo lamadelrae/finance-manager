@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinanceManager.Controllers.Session;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Utilities.DataAnnotations;
 using FinanceManager.Utilities.Extensions;
@@ -61,7 +62,7 @@ namespace FinanceManager.Controllers
             var incomeObj = new Models.DataBase.Incomes
             {
                 Id = incomeViewModel.Id.ToInt(),
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = incomeViewModel.Description,
                 Value = incomeViewModel.Value.MoneyToDecimal(),
                 Status = "A"
@@ -76,7 +77,7 @@ namespace FinanceManager.Controllers
         {
             var incomeObj = new Models.DataBase.Incomes
             {
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = incomeViewModel.Description,
                 Value = incomeViewModel.Value.MoneyToDecimal(),
                 Status = "A"

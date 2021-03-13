@@ -7,6 +7,7 @@ using FinanceManager.Models.DataBase;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Utilities.Extensions;
 using FinanceManager.Utilities.DataAnnotations;
+using FinanceManager.Controllers.Session;
 
 namespace FinanceManager.Controllers.Bills
 {
@@ -62,7 +63,7 @@ namespace FinanceManager.Controllers.Bills
             var billObj = new Models.DataBase.Bills
             {
                 Id = billViewModel.Id.ToInt(),
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = billViewModel.Description,
                 Value = billViewModel.Value.MoneyToDecimal(), 
                 Status = "A"
@@ -77,7 +78,7 @@ namespace FinanceManager.Controllers.Bills
         {
             var billObj = new Models.DataBase.Bills
             {
-                User_Id = Session.SessionController.GetInstance.Session.UserId,
+                User_Id = WebHelpers.GetSession().UserId,
                 Description = billViewModel.Description,
                 Value = billViewModel.Value.MoneyToDecimal(),
                 Status = "A"

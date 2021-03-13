@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using FinanceManager.Controllers.Session;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +30,12 @@ namespace FinanceManager
         {
             services.AddRazorPages();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = "FinanceManager.Session";
+                options.Cookie.IsEssential = true;
+            });
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,8 +57,8 @@ namespace FinanceManager
                 RequestPath = "/ViewCore"
             });
 
-            app.UseRouting();
-
+            app.UseRouting(); 
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -60,7 +68,7 @@ namespace FinanceManager
                     pattern: "{controller=Login}/{action=Login}/{id?}");
             });
 
-
+            WebHelpers.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
         }
     }
 }

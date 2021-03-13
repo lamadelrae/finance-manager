@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinanceManager.Controllers.Session;
 using FinanceManager.Models.DataBase;
 using FinanceManager.Models.ViewModels;
 using FinanceManager.Utilities.DataAnnotations;
@@ -31,7 +32,7 @@ namespace FinanceManager.Controllers.Settings
 
         private SettingsViewModel GetViewModel()
         {
-            var userObj = Repository.GetById(Session.SessionController.GetInstance.Session.UserId);
+            var userObj = Repository.GetById(WebHelpers.GetSession().UserId);
 
             return new SettingsViewModel
             {
