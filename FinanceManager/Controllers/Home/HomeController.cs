@@ -29,8 +29,8 @@ namespace FinanceManager.Controllers
 
             return new HomeViewModel
             {
-                BillsCount = billsPaid.Count() > 0 ? billsPaid.Count(i => i.User_Id == sessionObj.UserId) : 0,
-                IncomesCount = billsPaid.Count() > 0 ? billsPaid.Count(i => i.User_Id == sessionObj.UserId) : 0,
+                BillsCount = billsPaid.Count() > 0 ? billsPaid.Count() : 0,
+                IncomesCount = billsPaid.Count() > 0 ? incomesPaid.Count() : 0,
                 TotalBillsPaid = billsPaid.Count() > 0 ? billsPaid.Max(i => i.Value).ToString("C3") : "0",
                 TotalIncomesPaid = incomesPaid.Count() > 0 ? incomesPaid.Max(i => i.Value).ToString("C3") : "0"
             };
