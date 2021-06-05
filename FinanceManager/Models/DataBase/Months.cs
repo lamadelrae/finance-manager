@@ -21,7 +21,7 @@ namespace FinanceManager.Models.DataBase
 
         public decimal TotalIncome { get; set; }
 
-        public decimal TotalOutcome { get; set; }
+        public decimal TotalExpense { get; set; }
 
         public decimal TotalProfit { get; set; }
     }

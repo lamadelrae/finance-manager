@@ -9,13 +9,13 @@ namespace FinanceManager.Models
     {
         public decimal TotalIncome { get; set; }
 
-        public decimal TotalOutcome { get; set; }
+        public decimal TotalExpense { get; set; }
 
         public decimal TotalProfit
         {
             get
             {
-                return TotalIncome - TotalOutcome;
+                return TotalIncome - TotalExpense;
             }
         }
     }

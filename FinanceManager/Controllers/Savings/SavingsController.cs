@@ -73,7 +73,7 @@ namespace FinanceManager.Controllers.Savings
                 if (transaction.Type == "I")
                     calcObj.TotalIncome += transaction.Value;
                 else
-                    calcObj.TotalOutcome += transaction.Value;
+                    calcObj.TotalExpense += transaction.Value;
             }
 
             Models.DataBase.Savings savingsObj = BaseRepository.GetById(savingsId);

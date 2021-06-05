@@ -148,11 +148,11 @@ namespace FinanceManager.Controllers.Months
 
             Parallel.ForEach(dbObj.Months_Bills, i =>
             {
-                calcObj.TotalOutcome += i.Value;
+                calcObj.TotalExpense += i.Value;
             });
 
             dbObj.Month.TotalIncome = calcObj.TotalIncome;
-            dbObj.Month.TotalOutcome = calcObj.TotalOutcome;
+            dbObj.Month.TotalExpense = calcObj.TotalExpense;
             dbObj.Month.TotalProfit = calcObj.TotalProfit;
 
             Repository.Context.SaveChanges();
@@ -167,7 +167,7 @@ namespace FinanceManager.Controllers.Months
                 Salary = i.Month.Salary.ToString(),
                 SalaryIsManualInput = i.Month.SalaryIsManualInput,
                 TotalIncome = i.Month.TotalIncome.ToString(),
-                TotalOutcome = i.Month.TotalOutcome.ToString(),
+                TotalExpense = i.Month.TotalExpense.ToString(),
                 TotalProfit = i.Month.TotalProfit.ToString(),
                 Months_Bills = i.Months_Bills.Select(i => new Months_BillsViewModel
                 {
@@ -214,7 +214,7 @@ namespace FinanceManager.Controllers.Months
                 Username = Repository.Context.Users.Find(i.User_Id).Username,
                 Month = i.Month.ToString("MM/yyyy"),
                 TotalIncome = i.TotalIncome.ToString(),
-                TotalOutcome = i.TotalOutcome.ToString()
+                TotalExpense = i.TotalExpense.ToString()
             }).ToList();
         }
 
@@ -236,7 +236,7 @@ namespace FinanceManager.Controllers.Months
                 Month = i.Month.ToString("MM/yyyy"),
                 Username = Repository.Context.Users.Find(i.User_Id).Username,
                 TotalIncome = i.TotalIncome.ToString(),
-                TotalOutcome = i.TotalOutcome.ToString()
+                TotalExpense = i.TotalExpense.ToString()
             }).ToList();
         }
     }

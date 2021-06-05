@@ -104,8 +104,8 @@
     <div class="col">
         <label>Total Income</label>
         @Html.TextBoxFor(m => m.TotalIncome, new { Class = "form-control", Disabled = true })
-        <label>Total Outcome</label>
-        @Html.TextBoxFor(m => m.TotalOutcome, new { Class = "form-control", Disabled = true })
+        <label>Total Expense</label>
+        @Html.TextBoxFor(m => m.TotalExpense, new { Class = "form-control", Disabled = true })
         <label>Total Profit</label>
         @Html.TextBoxFor(m => m.TotalProfit, new { Class = "form-control", Disabled = true })
     </div>
@@ -115,5 +115,5 @@
 <script>
     $("#Salary").maskMoney();
     $("#TotalIncome").maskMoney();
-    $("#TotalOutcome").maskMoney();
+    $("#TotalExpense").maskMoney();
 </script>

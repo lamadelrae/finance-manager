@@ -121,7 +121,7 @@ namespace FinanceManager.Controllers.Login
                     User_Id = userObj.Id,
                     Month = Convert.ToDateTime($"{DateTime.Now.Year}-{i}-01"),
                     TotalIncome = 0,
-                    TotalOutcome = 0,
+                    TotalExpense = 0,
                     TotalProfit = 0,
                     Salary = userObj.Salary,
                     SalaryIsManualInput = false

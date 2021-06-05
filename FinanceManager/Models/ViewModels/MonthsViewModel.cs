@@ -16,7 +16,7 @@ namespace FinanceManager.Models.ViewModels
 
         public string TotalIncome { get; set; }
 
-        public string TotalOutcome { get; set; }
+        public string TotalExpense { get; set; }
     }
 
     public class MonthsFormViewModel
@@ -27,7 +27,7 @@ namespace FinanceManager.Models.ViewModels
 
         public string TotalIncome { get; set; }
 
-        public string TotalOutcome { get; set; }
+        public string TotalExpense { get; set; }
 
         public string TotalProfit { get; set; }
 

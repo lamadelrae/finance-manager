@@ -44,7 +44,7 @@
                             <label>Type Of Transaction</label>
                             <select class="form-control" id="TransactionForm_Type" name="TransactionForm.Type" required>
                                 <option value="I">Income</option>
-                                <option value="O">Outcome</option>
+                                <option value="E">Expense</option>
                             </select>
                             <br>
                             @Html.TextBoxFor(m => m.TransactionForm.Value, new { Class = "form-control", PlaceHolder = "Value", Required = true })

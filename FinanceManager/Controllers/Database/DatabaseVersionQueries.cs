@@ -64,7 +64,7 @@ namespace FinanceManager.Controllers
 											SalaryIsManualInput bit NOT NULL,
 											Salary decimal(16, 2) NOT NULL,
                                         	TotalIncome decimal(16, 2) NOT NULL,
-                                        	TotalOutcome decimal(16, 2) NOT NULL,
+                                        	TotalExpense decimal(16, 2) NOT NULL,
                                         	TotalProfit decimal(16, 2) NOT NULL,
                                         )";
 
