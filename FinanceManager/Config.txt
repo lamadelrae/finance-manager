@@ -1,8 +1,0 @@
-﻿<config>
-  <connection>
-    <datasource>Localhost\SQL2019</datasource>
-    <userid>sa</userid>
-    <password>pass</password>
-    <timeout>30</timeout>
-  </connection>
-</config>
