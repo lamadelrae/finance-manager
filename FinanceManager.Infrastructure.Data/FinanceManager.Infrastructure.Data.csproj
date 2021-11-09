@@ -4,4 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceManager.Domain\FinanceManager.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataUtilities\" />
+  </ItemGroup>
+
 </Project>
