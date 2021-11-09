@@ -1,27 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{58F7BA0C-B212-42FF-A909-DC225029C714}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - Infrastructure", "{E6F6D2C6-C0CA-4017-946A-938D4DE36E09}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Services", "3 - Services", "{81ED2E13-E12A-4A00-93AC-88FD1B0AB150}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Application", "4 - Application", "{0D1A4431-97B0-4A60-9FA0-AFC30F7357FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5- API", "5- API", "{E0EF9382-B645-4C58-8ED7-88D232AD4DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Domain", "FinanceManager.Domain\FinanceManager.Domain.csproj", "{B4047EB3-BD1B-4EEE-9460-8C9125FD480A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Domain", "FinanceManager.Domain\FinanceManager.Domain.csproj", "{B4047EB3-BD1B-4EEE-9460-8C9125FD480A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Infrastructure.Data", "FinanceManager.Infrastructure.Data\FinanceManager.Infrastructure.Data.csproj", "{D50019E5-1EBC-482F-B4AB-FCE67140AB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Infrastructure.Data", "FinanceManager.Infrastructure.Data\FinanceManager.Infrastructure.Data.csproj", "{D50019E5-1EBC-482F-B4AB-FCE67140AB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.BusinessService", "FinanceManager.BusinessService\FinanceManager.BusinessService.csproj", "{17FFC112-3BA9-4394-8A5E-0441893BC78D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Domain.Service", "FinanceManager.BusinessService\FinanceManager.Domain.Service.csproj", "{17FFC112-3BA9-4394-8A5E-0441893BC78D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Application", "FinanceManager.Application\FinanceManager.Application.csproj", "{ECF3F19A-F511-47C6-BB72-208E9A71A6EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Application", "FinanceManager.Application\FinanceManager.Application.csproj", "{ECF3F19A-F511-47C6-BB72-208E9A71A6EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.API", "FinanceManager.API\FinanceManager.API.csproj", "{437F542C-DF24-4169-8541-28A02495494D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.API", "FinanceManager.API\FinanceManager.API.csproj", "{437F542C-DF24-4169-8541-28A02495494D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,7 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B4047EB3-BD1B-4EEE-9460-8C9125FD480A} = {58F7BA0C-B212-42FF-A909-DC225029C714}
 		{D50019E5-1EBC-482F-B4AB-FCE67140AB17} = {E6F6D2C6-C0CA-4017-946A-938D4DE36E09}
-		{17FFC112-3BA9-4394-8A5E-0441893BC78D} = {81ED2E13-E12A-4A00-93AC-88FD1B0AB150}
+		{17FFC112-3BA9-4394-8A5E-0441893BC78D} = {58F7BA0C-B212-42FF-A909-DC225029C714}
 		{ECF3F19A-F511-47C6-BB72-208E9A71A6EA} = {0D1A4431-97B0-4A60-9FA0-AFC30F7357FE}
 		{437F542C-DF24-4169-8541-28A02495494D} = {E0EF9382-B645-4C58-8ED7-88D232AD4DB8}
 	EndGlobalSection
